@@ -1,0 +1,11 @@
+* {
+	text-decoration: none !important;
+}
+.edit-link {
+	text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+	color: var(--theme-color);
+	transition: all 0.3s linear;
+}
