@@ -9,3 +9,7 @@
 	color: var(--theme-color);
 	transition: all 0.3s linear;
 }
+
+.app-sub-sidebar li:before {
+  display: none;
+}
