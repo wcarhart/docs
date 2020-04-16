@@ -15,6 +15,7 @@
     window.$docsify = {
       name: 'koi',
       repo: 'wcarhart/koi',
+      homepage: 'overview.md',
       loadSidebar: true,
       logo: '/_media/logo.png',
       themeColor: '#9B59B6',
@@ -23,9 +24,16 @@
       autoHeader: false,
       subMaxLevel: 3,
       maxLevel: 4,
+      copyCode: {
+        buttonText : 'Copy',
+        errorText  : 'Uh oh! Could not copy!',
+        successText: 'Copied!'
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="https://unpkg.com/docsify-copy-code@2"></script>
   <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
 </body>
 </html>
