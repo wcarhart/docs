@@ -21,6 +21,7 @@
 - Examples
 
   - [Examples](examples.md)
+  - [Projects using koi](projects_using_koi.md)
 
 - About
   - [Caveats](caveats.md)
