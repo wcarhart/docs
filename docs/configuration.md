@@ -68,5 +68,5 @@ Koi pulls configurations from three different locations, in the following order:
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/overview.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/configuration.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

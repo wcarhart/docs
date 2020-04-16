@@ -48,7 +48,7 @@ The action for a registered argument describes what koi should do when the optio
 ### Requireds
 The required field describes whether or not an registered option is required, and thus can only be either _required_ or _optional_.
 
-**Examples:** `required` or `optional`
+**Examples:** `required`, `optional`
 
 **Restrictions:**
 * must be either `required` or `optional`
@@ -73,7 +73,9 @@ The help text for an option describes its purpose, and is printed in the generat
 * required, and cannot be left blank
 
 ### Verifying functions
-Verifying functions are functions that are used to verify the argument after it is parsed. For instance, if you expect the value of your argument to be an integer, you could write a function to verify such, and register it as the argument's verifying function. The following verifying functions are included with koi by default:
+Verifying functions are functions that are used to verify the argument after it is parsed. For instance, if you expect the value of your argument to be an integer, you could write a function to verify such, and register it as the argument's verifying function. For more information, see [Verifying arguments](/verifying_arguments).
+
+The following verifying functions are included with koi by default:
 * `__verifyfile` verify that a file exists
 * `__verifydirectory` verify that a directory exists
 * `__verifyfiletype FILETYPE` verify that a file exists and that is is of type _FILETYPE_
@@ -93,14 +95,14 @@ Here are a few helpful examples for how to use `__addarg`. Please refer to [Exam
 ```bash
 function hit_endpoint {
 	__addarg "-h" "--help" "help" "optional" "" "Hit an HTTP endpoint"
-	__addarg "-x" "--method" "storevalue" "optional" "GET" "The HTTP method to use" "__verifyhttpmethod"
+	__addarg "-x" "--method" "storevalue" "optional" "GET" "The HTTP method to use" "__verify_http_method"
 	__addarg "" "endpoint" "positionalvalue" "required" "" "The endpoint to hit"
 	__parseargs "$@"
 
 	curl -X "$method" "$endpoint"
 }
 
-function __verifyhttpmethod {
+function __verify_http_method {
 	# verify that $1 is a valid HTTP method
 	local available_methods=( GET POST PUT DELETE PATCH )
 	local found=0
@@ -116,13 +118,19 @@ function __verifyhttpmethod {
 ```
 [What is `__errortext` in this function?](/helpers?id=__errortext)
 
-### Build a complex find and replace command
+_Usage:_
+```
+hit_endpoint [-h] [-x METHOD] ENDPOINT
+```
+
+### Build a find and replace command
 ```bash
 function replace_in_file {
 	__addarg "-h" "--help" "help" "optional" "" "Find and replace in a file"
 	__addarg "" "file" "positionalarray" "required" "" "The file(s) to find and replace in" "__verifyfile"
 	__addarg "-r" "--replace" "storearray" "optional" "" "The text to replace"
 	__addarg "-w" "--with" "storearray" "optional" "" "The text to replace with"
+	__addarg "-s" "--skip" "flag" "optional" "" "Skip the file if it does not exist"
 	__parseargs "$@"
 
 	if [[ "${#replace[@]}" != "${#with[@]}" ]] ; then
@@ -131,6 +139,14 @@ function replace_in_file {
 	fi
 
 	for f in "${file[@]}" ; do
+		if [[ ! -f "$f" ]] ; then
+			if [[ $skip -eq 1 ]] ; then
+				continue
+			else
+				__errortext "$koiname: err: no such file '$f'"
+				return 1
+			fi
+		fi
 		for i in "${!replace[@]}" ; do
 			sed "s/${replace[$i]}/${with[$i]}/g" < "$f" > temp
 			mv -f temp > "$f"
@@ -142,7 +158,12 @@ function replace_in_file {
 
 [What is `__verifyfile` in this function?](/helpers?id=__verifyfile)
 
+_Usage:_
+```
+replace_in_file [-r REPLACE+] [-w WITH+] [-s] FILE...
+```
+
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/overview.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/registering_arguments.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

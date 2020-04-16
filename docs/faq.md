@@ -4,6 +4,10 @@
 
 ### Why can't I nest functions that parse arguments?
 
+### Can koi parse joint options?
+
+### Can koi parse mutually exclusive groups?
+
 <hr>
 <div style="text-align:center">
 	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/faq.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>

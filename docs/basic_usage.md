@@ -6,8 +6,12 @@ Koi uses the short option (`-s`) and long option (`--long`) pattern for defining
 
 ### Using koi to define options
 Using koi can be simplified into two steps:
-1. Define and register arguments to a function (with the `__addarg` command).
-2. Parse the arguments passed to the function (with the `__parseargs` command).
+1. Define and register arguments to a function (with the `__addarg` command)
+2. Parse the arguments passed to the function (with the `__parseargs` command)
+
+See [Registering arguments](/registering_arguments).
+
+See [Parsing arguments](/parsing_arguments).
 
 ### A practical example
 For instance, if we have a function `greet`, we can define arguments like so:
@@ -60,5 +64,5 @@ This may look complicated to use, but it easier than it looks.
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/overview.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/basic_usage.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>
