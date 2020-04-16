@@ -24,9 +24,8 @@
   - [Projects using koi](projects_using_koi.md)
 
 - About
-  - [Caveats](caveats.md)
   - [FAQ](faq.md)
-  - [Nomenclature](nomenclature.md)
+  - [Caveats](caveats.md)
   - [Author](author.md)
 
 <hr>
