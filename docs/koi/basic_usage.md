@@ -5,7 +5,7 @@
 Koi uses the short option (`-s`) and long option (`--long`) pattern for defining arguments, which was popularized by [GNU](https://www.gnu.org/home.en.html) and the [POSIX Utility Conventions](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html), with a few subtle differences. This means that you can have options which require an argument and options which do not (a.k.a. _flags_). Options can be either _required_ or _optional_, and can use a short option (`-s`) or a long option (`--long`). In addition, koi supports positional arguments, which do not require an option, but rather just the argument.
 
 ### Using koi to define options
-Using koi can be simplified into two steps:
+Parsing arguments with koi can be simplified into two steps:
 1. Define and register arguments to a function (with the `__addarg` command)
 2. Parse the arguments passed to the function (with the `__parseargs` command)
 
