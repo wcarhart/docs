@@ -55,6 +55,7 @@
                         </div>
                         <div class="row animated fadeInUp delay-2s justify-content-center text-body">
                                 <a href="docs/koi/" id="koi-btn" class="btn btn-primary">koi</a>
+                                <a href="docs/birdhouse/" id="birdhouse-btn" class="btn btn-primary">birdhouse</a>
                         </div>
                 </div>
                 <div id="credits">
@@ -112,17 +113,33 @@
                 } while (!done);
 
                 if (color_curved === colors['midnight_blue'] || color_curved === colors['wet_asphalt']) {
+                        // text
                         $('#content').css('color', colors['clouds']);
                         $('#lead-content').css('color', colors['clouds']);
+
+                        // koi button
                         $('#koi-btn').css('background-color', colors['clouds']);
                         $('#koi-btn').css('border-color', colors['clouds']);
                         $('#koi-btn').css('color', colors['midnight_blue']);
+
+                        // birdhouse button
+                        $('#birdhouse-btn').css('background-color', colors['clouds']);
+                        $('#birdhouse-btn').css('border-color', colors['clouds']);
+                        $('#birdhouse-btn').css('color', colors['midnight_blue']);
                 } else {
+                        // text
                         $('#content').css('color', colors['midnight_blue']);
                         $('#lead-content').css('color', colors['midnight_blue']);
+
+                        // koi button
                         $('#koi-btn').css('background-color', colors['midnight_blue']);
                         $('#koi-btn').css('border-color', colors['midnight_blue']);
                         $('#koi-btn').css('color', colors['clouds']);
+
+                        // birdhouse button
+                        $('#birdhouse-btn').css('background-color', colors['midnight_blue']);
+                        $('#birdhouse-btn').css('border-color', colors['midnight_blue']);
+                        $('#birdhouse-btn').css('color', colors['clouds']);
                 }
 
                 $('#curved').css('background-color', color_curved);
