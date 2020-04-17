@@ -1,45 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>koi</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Bashful argument parsing">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-  <link rel="stylesheet" href="/_style/style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Documentation Index</title>
+        <meta name="description" content="Documentation Index">
+        <meta name="twitter:card" value="summary">
+        <meta property="og:title" content="Documentation Index" />
+        <meta property="og:image" content="favicon-32x32.png" />
+        <meta property="og:description" content="Documentation Index">
+
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!-- static CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/animate.css">
+
+        <!-- icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="25x25" href="ico/favicon-25x25.png">
+        <link rel="manifest" href="ico/site.webmanifest">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Bootstrap to make page load faster -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <div id="app">Loading...</div>
-  <script>
-    window.$docsify = {
-      name: 'koi',
-      repo: 'wcarhart/koi',
-      homepage: 'overview.md',
-      loadSidebar: true,
-      logo: '_media/logo.png',
-      themeColor: '#9B59B6',
-      notFoundPage: true,
-      auto2top: true,
-      autoHeader: false,
-      subMaxLevel: 3,
-      maxLevel: 4,
-      copyCode: {
-        buttonText : 'Copy',
-        errorText  : 'Uh oh! Could not copy!',
-        successText: 'Copied!'
-      },
-      search: {
-        paths: 'auto',
-        placeholder: 'Search',
-        noData: 'No Results'
-      },
-    }
-  </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <script src="https://unpkg.com/docsify-copy-code@2"></script>
-  <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+        <div class="container-fluid test">
+                <div id="curved"></div>
+                <div id="spot-1"></div>
+                <div id="spot-2"></div>
+                <div id="spot-3"></div>
+                <div id="spot-4"></div>
+                <div id="spot-5"></div>
+                <div id="spot-6"></div>
+                <div id="spot-7"></div>
+                <div id="content">
+                        <div class="row animated fadeInUp content-row">
+                                <div class="col-xl-2 col-lg-12 main-column center-block">
+                                     <img id="logo-icon" src="img/logo.png" alt="Will Carhart">   
+                                </div>
+                                <div class="col-xl-10 col-lg-12 main-column">
+                                      <h1>Welcome!</h1>
+                                      <div class="text-body animated fadeInUp delay-1s">
+                                            <p class="lead" id="lead-content">This is the documentation landing page for Will Carhart's repositories and tools. Please select one of the available documentation sites from below.</p>  
+                                      </div>
+                                </div>
+                        </div>
+                        <div class="row animated fadeInUp delay-2s justify-content-center text-body">
+                                <a href="sites/koi/index.html" id="koi-btn" class="btn btn-primary">koi</a>
+                        </div>
+                </div>
+                <div id="credits">
+                        <a id="github-icon" href="https://github.com/wcarhart" target="_blank"><i class="fab fa-github" data-fa-transform="left-6"></i></a>
+                        <div style="text-align:center">&copy;&nbsp; Will Carhart 2020</div>
+                </div>
+        </div>
+
+        <script>
+                let colors = {
+                        "turquoise": "#1abc9c",
+                        "emerald": "#2ecc71",
+                        "peter_river": "#3498db",
+                        "amethyst": "#9b59b6",
+                        "wet_asphalt": "#34495e",
+                        "green_sea": "#16a085",
+                        "nephritis": "#27ae60",
+                        "belize_hole": "#2980b9",
+                        "wisteria": "#8e44ad",
+                        "midnight_blue": "#2c3e50",
+                        "sun_flower": "#f1c40f",
+                        "carrot": "#e67e22",
+                        "alizarin": "#e74c3c",
+                        "clouds": "#ecf0f1",
+                        "concrete": "#95a5a6",
+                        "orange": "#f39c12",
+                        "pumpkin": "#d35400",
+                        "pomegranate": "#c0392b",
+                        "silver": "#bdc3c7",
+                        "asbestos": "#7f8c8d"
+                }
+                let keys = Object.keys(colors);
+                let color_curved;
+                do {
+                        color_curved = colors[keys[Math.floor(Math.random() * keys.length)]];
+
+                } while (color_curved === colors['clouds']);
+                let color_spot_1 = colors[keys[Math.floor(Math.random() * keys.length)]];
+                let color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
+                let done = false;
+                do {
+                        done = true;
+                        if (color_spot_1 === color_curved) {
+                                done = false;
+                                color_spot_1 = colors[keys[Math.floor(Math.random() * keys.length)]];
+                        }
+                        if (color_spot_2 === color_curved) {
+                                done = false;
+                                color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
+                        }
+                        if (color_spot_1 == color_spot_2) {
+                                done = false;
+                                color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
+                        }
+                } while (!done);
+
+                if (color_curved === colors['midnight_blue'] || color_curved === colors['wet_asphalt']) {
+                        $('#content').css('color', colors['clouds']);
+                        $('#lead-content').css('color', colors['clouds']);
+                        $('#koi-btn').css('background-color', colors['clouds']);
+                        $('#koi-btn').css('border-color', colors['clouds']);
+                        $('#koi-btn').css('color', colors['midnight_blue']);
+                } else {
+                        $('#content').css('color', colors['midnight_blue']);
+                        $('#lead-content').css('color', colors['midnight_blue']);
+                        $('#koi-btn').css('background-color', colors['midnight_blue']);
+                        $('#koi-btn').css('border-color', colors['midnight_blue']);
+                        $('#koi-btn').css('color', colors['clouds']);
+                }
+
+                $('#curved').css('background-color', color_curved);
+                $('#spot-1').css('background-color', color_spot_1);
+                $('#spot-2').css('background-color', color_spot_2);
+                $('#spot-3').css('background-color', color_spot_2);
+
+                $('#spot-4').css('background-color', color_spot_1);
+                $('#spot-4').css('height', $('#spot-4').width());
+
+                $('#spot-5').css('background-color', color_spot_1);
+                $('#spot-5').css('height', $('#spot-5').width());
+
+                $('#spot-6').css('background-color', color_spot_1);
+                $('#spot-6').css('height', $('#spot-6').width());
+
+                $('#spot-7').css('background-color', color_spot_2);
+                $('#spot-7').css('height', $('#spot-7').width());
+        </script>
+
+        <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
 </body>
 </html>
