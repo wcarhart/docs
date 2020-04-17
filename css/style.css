@@ -179,6 +179,10 @@ body {
 	.text-body {
 		max-width: 70%;
 	}
+	#logo-icon {
+		height: 8rem;
+		width: auto;
+	}
 }
 
 /* Devices under 768px (md) */
@@ -186,5 +190,9 @@ body {
 	#content {
 		top: 5%;
 		left: 5%;
+	}
+	#logo-icon {
+		height: 5rem;
+		width: auto;
 	}
 }
