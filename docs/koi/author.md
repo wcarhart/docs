@@ -1,6 +1,6 @@
 # Author
 
-![Will Carhart](/_media/author.jpg ':size=100')
+![Will Carhart](/_media/author.jpg ':size=200')
 
 The author of koi is [Will Carhart](https://www.willcarh.art). Will is currently a software engineer at [Wisk](https://wisk.aero). Prior to Wisk, Will worked at [Illumina](https://www.illumina.com), and graduated from the [University of San Diego](https://sandiego.edu).
 
