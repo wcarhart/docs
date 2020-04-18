@@ -7,7 +7,7 @@
   <meta name="description" content="Bashful argument parsing">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-  <link rel="stylesheet" href="docs/koi/_style/style.css">
+  <link rel="stylesheet" href="_style/style.css">
 </head>
 <body>
   <div id="app">Loading...</div>
@@ -15,9 +15,11 @@
     window.$docsify = {
       name: 'koi',
       repo: 'wcarhart/koi',
-      homepage: 'docs/koi/overview.md',
+      // homepage: 'docs/koi/overview.md',
+      homepage: 'overview.md',
       loadSidebar: true,
-      logo: 'docs/koi/_media/logo.png',
+      // logo: 'docs/koi/_media/logo.png',
+      logo: '_media/logo.png',
       themeColor: '#9B59B6',
       notFoundPage: true,
       auto2top: true,
@@ -35,10 +37,10 @@
         noData: 'No Results'
       },
       // basePath: 'https://wcarhart.github.io/',
-      basePath: 'https://distracted-leakey-5bb864.netlify.app',
-      alias: {
-        '/docs/koi/_sidebar.md': '/_sidebar.md'
-      }
+      basePath: 'https://distracted-leakey-5bb864.netlify.app/docs/koi/',
+      // alias: {
+      //   '/docs/koi/_sidebar.md': '/_sidebar.md'
+      // }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
