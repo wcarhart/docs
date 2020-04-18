@@ -11,6 +11,7 @@ You can also tap the repository, but beware of name collisions.
 brew tap wcarhart/tools
 brew install koi
 ```
+*[What is a Homebrew tap?](https://stackoverflow.com/questions/34408147/what-does-brew-tap-mean)*
 
 ### Manual installation
 If you don't use Homebrew, you can also install koi manually by cloning the koi repository.

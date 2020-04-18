@@ -6,7 +6,7 @@ If you'd like to contribute to koi, please use the following steps to get starte
 
 1. Fork or clone the koi repository.
 ```bash
-git clone https://github.com/wcarhart/koi
+git clone https://github.com/wcarhart/koi ~/koi
 ```
 
 2. Implement your changes or updates. Make sure to add more tests in the appropriate subfolder in `tests/`. For guidance on how to write tests, see [Writing Tests](#Writing-tests).
