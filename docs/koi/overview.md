@@ -1,4 +1,4 @@
-<p align="center"><img alt="koi logo" src="https://distracted-leakey-5bb864.netlify.app/docs/koi/_media/logo.png" /></p>
+<p align="center"><img alt="koi logo" src="https://willcarhart.dev/docs/koi/_media/logo.png" /></p>
 
 <h1 align="center">koi</h1>
 <h5 align="center">Bashful argument parsing</h5>
