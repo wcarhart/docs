@@ -17,7 +17,7 @@ Koi will autogenerate a usage statement to be printed in the help menu. It has a
 * `ARG...` a required positional array
 * `[ARG...]` an optional positional array
 
-Long options are not listed in the usage statement for brevity, but rather are printed in the argument documentation below.
+Long options are not listed in the usage statement for brevity, but rather are printed in the argument documentation below. In the argument documentation, `(+)` mean that the associated argument is an array, and can take multiple arguments.
 
 ## Help menus without subcommands
 If you are use a `__koimain` (see [Using subcommands](/using_subcommands)), then the help menu will be generated on a _by-script_ basis. This means that the usage will be for the whole script, rather than for individual subcommands. You can show the help menu with the `-h` or `--help` options, provided they are registered.
