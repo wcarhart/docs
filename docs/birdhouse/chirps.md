@@ -59,5 +59,5 @@ birdhouse chirps --omitreplies --url --absolute --num 3 @mkbhd
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/_404.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/birdhouse/chirps.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

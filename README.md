@@ -17,5 +17,5 @@ _Documentation:_ https://willcarhart.dev/docs/birdhouse
 * HTML5
 * CSS3
 * Javascript + jQuery
-* generated with [Docsify](https://docsify.js.org/#/)
+* powered by [Docsify](https://docsify.js.org/#/)
 * deployed via [Netlify](https://www.netlify.com)

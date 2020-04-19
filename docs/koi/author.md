@@ -12,5 +12,5 @@ The author of koi is [Will Carhart](https://www.willcarh.art). Will is currently
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/author.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/author.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

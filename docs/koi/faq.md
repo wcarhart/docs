@@ -27,5 +27,5 @@ The original working name of the library was _Bashful Arg Parser_, which is a mo
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/faq.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/faq.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

@@ -27,5 +27,5 @@ Once koi is installed, you can start using it immediately. To do so, see [Using 
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/installation.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/installation.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

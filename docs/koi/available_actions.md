@@ -121,5 +121,5 @@ A function that exemplifies help arguments
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/available_actions.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/available_actions.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

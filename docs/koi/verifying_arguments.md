@@ -148,5 +148,5 @@ backup_files_and_remove [-h] [-j JSON+] [-y YAML+]
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/verifying_arguments.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/verifying_arguments.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

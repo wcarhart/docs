@@ -7,5 +7,5 @@ Due to the fact that koi is written in Bash, its implementation comes with a few
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/caveats.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/caveats.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

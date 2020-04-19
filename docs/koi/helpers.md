@@ -63,5 +63,5 @@ Koi also uses a few internal variables. It is _highly recommended_ that you do n
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/wcarhart.github.io/docs/helpers.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/helpers.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>
