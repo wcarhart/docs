@@ -1,8 +1,10 @@
 # FAQ
 
 ### How does koi work?
+To parse arguments, koi first builds up _argument lists_ with each `__addarg` call. These lists hold information about the arguments registered for each function (whether it be a subcommand or a `__koimain`). When it comes time to parse arguments with `__parseargs`, koi refers to the built argument lists to determine how to parse each argument.
 
 ### What is koi written in?
+Koi is written entirely in Bash.
 
 ### Why do some functions need to start with two underscores?
 When koi uses subcommands, it uses the functions defined in the script as available subcommands. In order for koi to treat a function as internal and not display it as an available CLI subcommand, koi ignores functions that begin with an underscore (`_`) or a dash (`-`). Thus, if you are using subcommands, you can define a function whose name begins with two underscores and koi will treat it as internal.
