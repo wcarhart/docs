@@ -76,7 +76,6 @@ Koi has a mini test framework in the `tests/` folder. Tests are broken into the 
     └── test_verifyingfunctions_valid.sh
 ```
 
-
 To write tests for a new feature, first select an appropriate subfolder and test file within the `tests/` folder. If you feel one doesn't exist, go ahead and create it. Make sure any files you add end in `.sh`, or `koitest` will not pick them up.
 
 In your new test file, use the following format.
@@ -106,6 +105,8 @@ To run your test, simply use the `koitest` script from the `tests/` directory.
 cd ~/koi/tests
 ./koitests
 ```
+
+You can also use and modify the files in `tests/scripts/` if you need some test scripts for running your new functionality. These files should only be used for dev tests and not replace the actual unit tests in the rest of the `tests/` directory.
 
 <hr>
 <div style="text-align:center">
