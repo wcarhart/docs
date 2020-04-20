@@ -30,6 +30,7 @@ Long options are the full identifier for the option. They are denoted by two das
 * must start with two dashes (except in the case of [positional arguments](/using_positional_arguments))
 * must be alphanumeric, and cannot start with a number
 * must be unique among defined long options for a function
+* cannot be an illegal word (see [Are there any illegal names for registered options?](/faq?id=are-there-any-illegal-names-for-registered-options))
 * required, and cannot be left blank
 
 ### Actions
