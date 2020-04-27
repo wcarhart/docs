@@ -1,5 +1,46 @@
 # Examples
 
+### Add an installable library to a list
+```bash
+function add_library {
+	__addarg "-h" "--help" "help" "optional" "" "Add a library to a trackable list"
+	__addarg "" "lib" "positionalvalue" "required" "" "The library to add"
+	__addarg "-b" "--brew" "flag" "optional" "" "The new library should be installed via Homebrew"
+	__addarg "-y" "--yum" "flag" "optional" "" "The new library should be installed via yum"
+	__addarg "-Y" "--yarn" "flag" "optional" "" "The new library should be installed via yarn"
+	__addarg "-a" "--aptget" "flag" "optional" "" "The new library should be installed via apt-get"
+	__addgroup "flags" "XOR" "required" "--brew" "--yum" "--yarn" "--aptget"
+	__parseargs "$@"
+
+	if [[ $brew -eq 1 ]] ; then
+		echo "brew install $lib" >> ~/mylibraries.sh
+	elif [[ $yum -eq 1 ]] ; then
+		echo "yum install -y $lib" >> ~/mylibraries.sh
+	elif [[ $yarn -eq 1 ]] ; then
+		echo "yarn global add $lib" >> ~/mylibraries.sh
+	else
+		echo "apt-get install $lib" >> ~/.mylibraries.sh
+	fi
+}
+```
+
+### Add arguments to multiple groups
+```bash
+function multiple {
+	__addarg "-h" "--help" "help" "optional" "" "help text"
+	__addarg "-f" "--flag" "flag" "optional" "" "help text"
+	__addarg "-g" "--glad" "flag" "optional" "" "help text"
+	__addarg "-v" "--vlad" "flag" "optional" "" "help text"
+	__addgroup "flags1" "XOR" "required" "--flag" "--glad"
+	__addgroup "flags2" "XOR" "required" "--glad" "--vlad"
+	__parseargs "$@"
+
+	echo "flag: '$flag'"
+	echo "glad: '$glad'"
+	echo "vlad: '$vlad'"
+}
+```
+
 ### Backup files in the cloud before removal
 ```bash
 function backup_files_and_remove {
@@ -296,6 +337,19 @@ function __verify_http_method {
 		__errortext "$koiname: err: invalid HTTP method, must be one of ${available_methods[@]}"
 		return 1
 	fi
+}
+```
+
+### Move a file to a location
+```bash
+function move {
+	__addarg "-h" "--help" "help" "optional" "" "Move a file to a location"
+	__addarg "-f" "--from" "storevalue" "optional" "" "The file to move" "__verifyfile"
+	__addarg "-t" "--to" "storevalue" "optional" "" "The location to which to move"
+	__addgroup "group" "AND" "required" "--from" "--to"
+	__parseargs "$@"
+
+	mv "$from" "$to"
 }
 ```
 

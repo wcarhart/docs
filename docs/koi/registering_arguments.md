@@ -3,6 +3,8 @@
 
 To allow a function to use command line arguments, you register the arguments using koi's `__addarg` command. Arguments are registered on a by-function basis, meaning that each individual function can have it's own registered arguments.
 
+You can also add arguments to _argument groups_ (see [Using argument groups](/using_argument_groups)).
+
 ## Using __addarg
 
 `__addarg` takes _six required arguments_ (`shortoption`, `longoption`, `action`, `required?`, `default`, and `helptext`) and _one optional argument_ (`verifyingfunction`). The general anatomy of `__addarg` is shown below.

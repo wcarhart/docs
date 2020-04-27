@@ -1,5 +1,5 @@
 # Helpers
-!> Before starting this section, make sure you've read and [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+!> Before starting this section, make sure you've read and [Registering arguments](/registering_arguments), [Parsing arguments](/parsing_arguments), and [Using argument groups](/using_argument_groups).
 
 In addition to all of its other functionality, koi also exposes a few helper functions and internal variables.
 
@@ -58,6 +58,9 @@ Koi also uses a few internal variables. It is _highly recommended_ that you do n
 * `__koidefaults` the argument list used to store defaults
 * `__koihelptexts` the argument list used to store help texts
 * `__koiverifyingfunctions` the argument list used to store verifying functions and their arguments
+* `__koigroupmeta` the argument list used to store meta information about groups
+* `__koigroupvalue` the argument list used to store literal information about groups
+* `__koiparsedargs` the list of arguments that have been parsed
 
 !> **Warning**<br>Overwriting these variables could have unintended effects that may cause koi to malfunction.
 

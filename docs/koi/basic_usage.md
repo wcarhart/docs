@@ -62,6 +62,8 @@ This may look complicated to use, but it easier than it looks.
 
 * To learn more about using positional arguments, see [Using positional arguments](/using_positional_arguments).
 
+* To learn more about using argument groups (such as mutually exclusivity), see [Using argument groups](/using_argument_groups).
+
 <hr>
 <div style="text-align:center">
 	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/basic_usage.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>

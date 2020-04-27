@@ -64,6 +64,10 @@ _Subcommands_
 ```bash
 myscript.sh subcommand -a foo --longoption baz arg0 arg1
 ```
+_Mutually Exclusive Groups_
+```bash
+myscript.sh (-a | -b)
+```
 
 #### Build sophisticated Bash scripts {docsify-ignore}
 ```bash
@@ -102,7 +106,7 @@ Start a workflow given a workflow script
 ```
 
 ## Dive in
-Easily install koi with `brew install wcarhart/tools/koi`, or read [Installation](/installation) for more information. Check [Basic Usage](/basic-usage) for how to get started using koi.
+Easily install koi with `brew install wcarhart/tools/koi`, or read [Installation](/installation) for more installation options. To get started using koi, check out the [Basic usage](/basic-usage) section.
 
 ## Author
 [Will Carhart](https://github.com/wcarhart) is the author of koi. Check the [Author](/author) section for more information.
