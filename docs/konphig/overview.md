@@ -6,6 +6,8 @@
 
 Konphig contains custom settings for common UNIX tools. You can think of it as a dotfiles repo, with some extra bells and whistles.
 
+> Interested in the development of konphig? Read the [Development](/development) section, or check out its [repository](https://github.com/wcarhart/konphig) for more info!
+
 Konphig is easy to install. To get started, checkout [Installation](/installation).
 
 ## Features
@@ -90,6 +92,7 @@ _Change your command prompt on the fly_
 ```bash
 dp 5    # change to 'different prompt' #5
 ```
+See [Bash functions](/bash_functions), [kn](/kn), [Git aliases](/git_aliases), and [Bash aliases](/bash_aliases) for more!
 
 ## Author
 [Will Carhart](https://github.com/wcarhart) is the author of konphig. Check the [Author](/author) section for more information.

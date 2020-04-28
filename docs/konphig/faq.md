@@ -1,6 +1,10 @@
 # FAQ
 
-Coming soon 🏗
+### Does konphig support shells other than Bash?
+
+### What is konphig written in?
+
+### How does `kn` parse complex arguments?
 
 <hr>
 <div style="text-align:center">

@@ -8,6 +8,9 @@
 
   - [kn](kn.md)
   - [Bash functions](bash_functions.md)
+<!--     <ul class="app-sub-sidebar">
+      <li><a class="section-link" href="#/bash_functions?id=adda">adda</a></li>
+    </ul> -->
   - [Bash aliases](bash_aliases.md)
   - [Bash variables](bash_variables.md)
   - [Git shortcuts](git_aliases.md)

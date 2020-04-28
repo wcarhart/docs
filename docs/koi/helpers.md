@@ -1,5 +1,5 @@
 # Helpers
-!> Before starting this section, make sure you've read and [Registering arguments](/registering_arguments), [Parsing arguments](/parsing_arguments), and [Using argument groups](/using_argument_groups).
+!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments), [Parsing arguments](/parsing_arguments), and [Using argument groups](/using_argument_groups).
 
 In addition to all of its other functionality, koi also exposes a few helper functions and internal variables.
 

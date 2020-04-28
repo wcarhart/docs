@@ -1,5 +1,5 @@
 # Verifying arguments
-!> Before starting this section, make sure you've read and [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
 
 An important part of any CLI is verifying command line arguments. This can range from performing simple file checks to performing more complex verification functionality. Koi exposes any easy way to reproducibly verifying command line arguments with _verifying functions_.
 

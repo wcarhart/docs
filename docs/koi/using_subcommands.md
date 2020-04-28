@@ -1,5 +1,5 @@
 # Using Subcommands
-!> Before starting this section, make sure you've read and [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
 
 Another powerful feature of koi is the ability to parse subcommands.
 

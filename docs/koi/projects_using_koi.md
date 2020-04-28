@@ -11,6 +11,11 @@ Chiller is a helpful tool for managing and release software in Homebrew taps.
 
 **Repository:** [chiller](https://github.com/wcarhart/chiller)
 
+### kn
+`kn` is the CLI interface for konphig, a cool dotfiles management tool.
+
+**Repository:** [konphig](https://github.com/wcarhart/konphig)
+
 <hr>
 
 **Have a project using koi that you'd like to add to this page? [Open a PR.](https://github.com/wcarhart/wcarhart.github.io/compare)**

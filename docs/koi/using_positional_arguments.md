@@ -1,5 +1,5 @@
 # Using positional arguments
-!> Before starting this section, make sure you've read and [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
 
 Options can be helpful because their purpose is often stated in their name. For example, an argument called `--file` probably needs a path to a file. This is helpful to the end user of a script because they can deduce what arguments they need to provide.
 

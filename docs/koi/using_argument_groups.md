@@ -1,5 +1,5 @@
 # Using argument groups
-!> Before starting this section, make sure you've read and [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
 
 Sometimes it is helpful to group a script's arguments together. This can be used to require two arguments to be used together, or to prevent more than one optional argument from being used.
 
