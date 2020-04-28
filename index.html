@@ -56,6 +56,7 @@
                         <div class="row animated fadeInUp delay-2s justify-content-center text-body">
                                 <a href="docs/koi/" id="koi-btn" class="btn btn-primary">koi</a>
                                 <a href="docs/birdhouse/" id="birdhouse-btn" class="btn btn-primary">birdhouse</a>
+                                <a href="docs/konphig/" id="konphig-btn" class="btn btn-primary">konphig</a>
                         </div>
                 </div>
                 <div id="credits">
@@ -65,99 +66,109 @@
         </div>
 
         <script>
-                let colors = {
-                        "turquoise": "#1abc9c",
-                        "emerald": "#2ecc71",
-                        "peter_river": "#3498db",
-                        "amethyst": "#9b59b6",
-                        "wet_asphalt": "#34495e",
-                        "green_sea": "#16a085",
-                        "nephritis": "#27ae60",
-                        "belize_hole": "#2980b9",
-                        "wisteria": "#8e44ad",
-                        "midnight_blue": "#2c3e50",
-                        "sun_flower": "#f1c40f",
-                        "carrot": "#e67e22",
-                        "alizarin": "#e74c3c",
-                        "clouds": "#ecf0f1",
-                        "concrete": "#95a5a6",
-                        "orange": "#f39c12",
-                        "pumpkin": "#d35400",
-                        "pomegranate": "#c0392b",
-                        "silver": "#bdc3c7",
-                        "asbestos": "#7f8c8d"
+            let colors = {
+                "turquoise": "#1abc9c",
+                "emerald": "#2ecc71",
+                "peter_river": "#3498db",
+                "amethyst": "#9b59b6",
+                "wet_asphalt": "#34495e",
+                "green_sea": "#16a085",
+                "nephritis": "#27ae60",
+                "belize_hole": "#2980b9",
+                "wisteria": "#8e44ad",
+                "midnight_blue": "#2c3e50",
+                "sun_flower": "#f1c40f",
+                "carrot": "#e67e22",
+                "alizarin": "#e74c3c",
+                "clouds": "#ecf0f1",
+                "concrete": "#95a5a6",
+                "orange": "#f39c12",
+                "pumpkin": "#d35400",
+                "pomegranate": "#c0392b",
+                "silver": "#bdc3c7",
+                "asbestos": "#7f8c8d"
+            }
+            let keys = Object.keys(colors);
+            let color_curved;
+            do {
+                color_curved = colors[keys[Math.floor(Math.random() * keys.length)]];
+
+            } while (color_curved === colors['clouds']);
+            let color_spot_1 = colors[keys[Math.floor(Math.random() * keys.length)]];
+            let color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
+            let done = false;
+            do {
+                done = true;
+                if (color_spot_1 === color_curved) {
+                    done = false;
+                    color_spot_1 = colors[keys[Math.floor(Math.random() * keys.length)]];
                 }
-                let keys = Object.keys(colors);
-                let color_curved;
-                do {
-                        color_curved = colors[keys[Math.floor(Math.random() * keys.length)]];
-
-                } while (color_curved === colors['clouds']);
-                let color_spot_1 = colors[keys[Math.floor(Math.random() * keys.length)]];
-                let color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
-                let done = false;
-                do {
-                        done = true;
-                        if (color_spot_1 === color_curved) {
-                                done = false;
-                                color_spot_1 = colors[keys[Math.floor(Math.random() * keys.length)]];
-                        }
-                        if (color_spot_2 === color_curved) {
-                                done = false;
-                                color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
-                        }
-                        if (color_spot_1 == color_spot_2) {
-                                done = false;
-                                color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
-                        }
-                } while (!done);
-
-                if (color_curved === colors['midnight_blue'] || color_curved === colors['wet_asphalt']) {
-                        // text
-                        $('#content').css('color', colors['clouds']);
-                        $('#lead-content').css('color', colors['clouds']);
-
-                        // koi button
-                        $('#koi-btn').css('background-color', colors['clouds']);
-                        $('#koi-btn').css('border-color', colors['clouds']);
-                        $('#koi-btn').css('color', colors['midnight_blue']);
-
-                        // birdhouse button
-                        $('#birdhouse-btn').css('background-color', colors['clouds']);
-                        $('#birdhouse-btn').css('border-color', colors['clouds']);
-                        $('#birdhouse-btn').css('color', colors['midnight_blue']);
-                } else {
-                        // text
-                        $('#content').css('color', colors['midnight_blue']);
-                        $('#lead-content').css('color', colors['midnight_blue']);
-
-                        // koi button
-                        $('#koi-btn').css('background-color', colors['midnight_blue']);
-                        $('#koi-btn').css('border-color', colors['midnight_blue']);
-                        $('#koi-btn').css('color', colors['clouds']);
-
-                        // birdhouse button
-                        $('#birdhouse-btn').css('background-color', colors['midnight_blue']);
-                        $('#birdhouse-btn').css('border-color', colors['midnight_blue']);
-                        $('#birdhouse-btn').css('color', colors['clouds']);
+                if (color_spot_2 === color_curved) {
+                    done = false;
+                    color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
                 }
+                if (color_spot_1 == color_spot_2) {
+                    done = false;
+                    color_spot_2 = colors[keys[Math.floor(Math.random() * keys.length)]];
+                }
+            } while (!done);
 
-                $('#curved').css('background-color', color_curved);
-                $('#spot-1').css('background-color', color_spot_1);
-                $('#spot-2').css('background-color', color_spot_2);
-                $('#spot-3').css('background-color', color_spot_2);
+            if (color_curved === colors['midnight_blue'] || color_curved === colors['wet_asphalt']) {
+                // text
+                $('#content').css('color', colors['clouds']);
+                $('#lead-content').css('color', colors['clouds']);
 
-                $('#spot-4').css('background-color', color_spot_1);
-                $('#spot-4').css('height', $('#spot-4').width());
+                // koi button
+                $('#koi-btn').css('background-color', colors['clouds']);
+                $('#koi-btn').css('border-color', colors['clouds']);
+                $('#koi-btn').css('color', colors['midnight_blue']);
 
-                $('#spot-5').css('background-color', color_spot_1);
-                $('#spot-5').css('height', $('#spot-5').width());
+                // birdhouse button
+                $('#birdhouse-btn').css('background-color', colors['clouds']);
+                $('#birdhouse-btn').css('border-color', colors['clouds']);
+                $('#birdhouse-btn').css('color', colors['midnight_blue']);
 
-                $('#spot-6').css('background-color', color_spot_1);
-                $('#spot-6').css('height', $('#spot-6').width());
+                // konphig button
+                $('#konphig-btn').css('background-color', colors['clouds']);
+                $('#konphig-btn').css('border-color', colors['clouds']);
+                $('#konphig-btn').css('color', colors['midnight_blue']);
+            } else {
+                // text
+                $('#content').css('color', colors['midnight_blue']);
+                $('#lead-content').css('color', colors['midnight_blue']);
 
-                $('#spot-7').css('background-color', color_spot_2);
-                $('#spot-7').css('height', $('#spot-7').width());
+                // koi button
+                $('#koi-btn').css('background-color', colors['midnight_blue']);
+                $('#koi-btn').css('border-color', colors['midnight_blue']);
+                $('#koi-btn').css('color', colors['clouds']);
+
+                // birdhouse button
+                $('#birdhouse-btn').css('background-color', colors['midnight_blue']);
+                $('#birdhouse-btn').css('border-color', colors['midnight_blue']);
+                $('#birdhouse-btn').css('color', colors['clouds']);
+
+                // konphig button
+                $('#konphig-btn').css('background-color', colors['midnight_blue']);
+                $('#konphig-btn').css('border-color', colors['midnight_blue']);
+                $('#konphig-btn').css('color', colors['clouds']);
+            }
+
+            $('#curved').css('background-color', color_curved);
+            $('#spot-1').css('background-color', color_spot_1);
+            $('#spot-2').css('background-color', color_spot_2);
+            $('#spot-3').css('background-color', color_spot_2);
+
+            $('#spot-4').css('background-color', color_spot_1);
+            $('#spot-4').css('height', $('#spot-4').width());
+
+            $('#spot-5').css('background-color', color_spot_1);
+            $('#spot-5').css('height', $('#spot-5').width());
+
+            $('#spot-6').css('background-color', color_spot_1);
+            $('#spot-6').css('height', $('#spot-6').width());
+
+            $('#spot-7').css('background-color', color_spot_2);
+            $('#spot-7').css('height', $('#spot-7').width());
         </script>
 
         <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
