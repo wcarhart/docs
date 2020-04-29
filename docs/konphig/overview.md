@@ -56,6 +56,10 @@ up 4
 down 2
 # /dir0/dir1/dir2
 ```
+_Move recently downloaded files to the current directory_
+```bash
+snag 3    # snags the 3 most recently downloaded files and moves them to the current directory
+```
 
 ### Clever Git extras
 _Remove local branches not present in the remote_

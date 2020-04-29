@@ -1,6 +1,10 @@
 * {
 	text-decoration: none !important;
 }
+
+html {
+	scroll-behavior: smooth;
+}
 .edit-link {
 	text-decoration: none;
 }
@@ -27,5 +31,32 @@
 .inline-subtitle {
 	display: inline-block;
 	padding-bottom: 0rem;
+	padding-top: 0rem;
 	margin-bottom: 0rem;
+	margin-top: 0rem;
+}
+
+.markdown-section tr:nth-child(2n) {
+	background-color: transparent !important;
+}
+
+#top-button {
+	display: none; /* hidden by default */
+	position: fixed;
+	bottom: 1rem;
+	right: 1.5rem;
+	z-index: 99;
+	border: none;
+	outline: none;
+	background-color: var(--theme-color);
+	color: #3f3f3f;
+	cursor: pointer;
+	padding: 1rem;
+	border-radius: 0.6rem;
+	font-size: 1.125rem;
+}
+
+#top-button:hover {
+	background-color: #555;
+	color: #c8c8c8;
 }
