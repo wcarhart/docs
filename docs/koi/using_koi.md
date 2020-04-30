@@ -17,6 +17,8 @@ __koirun "$@"
 
 There are plenty of examples of how to use koi in the [Examples](/examples) section.
 
+To start using all of the features of koi, check out [Basic usage](/basic_usage).
+
 ### Configuring koi
 You should override the `koiname` and `koidescription` variables after you source koi. These variables are printed in error and help messages.
 ```bash

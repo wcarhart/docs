@@ -52,7 +52,7 @@ Greet a person by name
 ```
 
 ### Diving deeper
-This may look complicated to use, but it easier than it looks.
+This may look complicated to use, but it's easier than it looks.
 
 * To learn more about adding arguments, see [Registering arguments](/registering_arguments).
 
@@ -62,7 +62,7 @@ This may look complicated to use, but it easier than it looks.
 
 * To learn more about using positional arguments, see [Using positional arguments](/using_positional_arguments).
 
-* To learn more about using argument groups (such as mutually exclusivity), see [Using argument groups](/using_argument_groups).
+* To learn more about using argument groups (such as mutual exclusivity), see [Using argument groups](/using_argument_groups).
 
 <hr>
 <div style="text-align:center">

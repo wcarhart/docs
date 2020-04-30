@@ -28,9 +28,9 @@ Group properities define how arguments in the group should be parsed. You can us
 
 | Property | Description |
 |:--------:|-------------|
-| `XOR` | _Exactly one_ argument in the group must be present when arguments are parsed. |
+| `XOR` | _Exactly one_ argument in the group must be present when arguments are parsed (_mutual exclusivity_). |
 | `OR` | _Any number_ of arguments in the group can be present when arguments are parsed. |
-| `AND` | _All_ of the arguments in the group must be present when arguments are parsed. |
+| `AND` | _All_ of the arguments in the group must be present when arguments are parsed (_mutual inclusivity_). |
 
 **Examples:** `XOR`, `OR`, `AND`
 
@@ -51,7 +51,7 @@ Group arguments are the registered arguments that are in the group. The minimum 
 **Examples:** `--myflag`, `--myoption`, `--outdir`
 
 **Restrictions:**
-* must be a previously registered argument via `__addarg`
+* must be a previously registered argument via `__addarg` (see [Registering arguments](/registering_arguments))
 * cannot be an argument with a `help`, `positionalvalue`, or `positionalarray` action
 * registered argument cannot be required
 

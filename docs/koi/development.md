@@ -59,6 +59,9 @@ Koi has a mini test framework in the `tests/` folder. Tests are broken into the 
 ├── test_general
 │   ├── test_general_invalid.sh
 │   └── test_general_valid.sh
+├── test_groups
+│   ├── test_groups_invalid.sh
+│   └── test_groups_valid.sh
 ├── test_helps
 │   ├── test_helps_invalid.sh
 │   └── test_helps_valid.sh
@@ -78,7 +81,7 @@ Koi has a mini test framework in the `tests/` folder. Tests are broken into the 
 
 To write tests for a new feature, first select an appropriate subfolder and test file within the `tests/` folder. If you feel one doesn't exist, go ahead and create it. Make sure any files you add end in `.sh`, or `koitest` will not pick them up.
 
-In your new test file, use the following format.
+In your new test file, use the following format:
 ```bash
 #!/bin/bash
 # ========= TESTS ========= #
@@ -103,7 +106,17 @@ You can refer to any of the other test files for examples of passing tests.
 To run your test, simply use the `koitest` script from the `tests/` directory.
 ```bash
 cd ~/koi/tests
-./koitests
+./koitest my_new_test.sh
+```
+You should also run all of the tests to confirm that you didn't break anything else.
+```bash
+cd ~/koi/tests
+./koitest
+```
+You can also run a folder of tests to confirm that a feature works.
+```bash
+cd ~/koi/tests
+./koitest test_groups/*
 ```
 
 You can also use and modify the files in `tests/scripts/` if you need some test scripts for running your new functionality. These files should only be used for dev tests and not replace the actual unit tests in the rest of the `tests/` directory.
