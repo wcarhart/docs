@@ -9,6 +9,9 @@ Konphig has many different configurations written in different configuration lan
 ### How does `kn` parse complex arguments?
 `kn` uses an argument parsing library called _koi_ to parse command line arguments. Check out [koi's repository](https://github.com/wcarhart/koi) or [koi's documentation](https://willcarhart.dev/docs/koi).
 
+### Why do I need to both install `kn` and clone the konphig repo?
+`kn` is used to interact with the konphig files. To interact with konphig files, the konphig repo needs to be cloned locally.
+
 <hr>
 <div style="text-align:center">
 	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/konphig/faq.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>

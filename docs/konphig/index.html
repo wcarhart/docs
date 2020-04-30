@@ -35,7 +35,7 @@
         placeholder: 'Search',
         noData: 'No Results'
       },
-      // basePath: 'https://www.willcarhart.dev/docs/konphig/',
+      basePath: 'https://www.willcarhart.dev/docs/konphig/',
     }
   </script>
   <script>
@@ -50,8 +50,15 @@
     }
 
     function topFunction() {
+      // set smooth scrolling
+      $('html').css( "scroll-behavior", "smooth" );
+
+      // smooth scroll to top of page
       document.body.scrollTop = 0;            // Safari
       document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
+
+      // default to Docsify scroll behavior
+      $('html').css( "scroll-behavior", "auto" );
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
