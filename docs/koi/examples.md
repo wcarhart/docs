@@ -244,6 +244,7 @@ function checkstockprice {
 ```
 
 ### Get a tarball from GitHub
+Taken from [chiller](https://github.com/wcarhart/chiller), which uses koi.
 ```bash
 function get_tarball {
 	__addarg "-h" "--help" "help" "optional" "" "Get a tarball from GitHub"

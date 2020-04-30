@@ -6,12 +6,12 @@ Koi is very configurable. You have a variety of options you can control.
 |:------:|-------------|-----------------|:-------:|:-------:|
 | `koiname` | name of the script using koi | `koiname` is printed in error messages and generated help menus. | `'myscript.sh'` | `'koi'` |
 | `koidescription` | description of the script using koi | `koidescription` is printed in generated help menus. | `'A brief piece of text about my script.'` | `'Bashful argument parsing'` |
-| `koihelpmenuprefix` | characters that prefix command documentation in help menus | `koihelpmenuprefix` is printed before each command in generated help menus. | `>>` or `$` | `''` |
-| `koiwordwraplength` | maximum line length | `koiwordwraplength` defines the maximum number of characters are printed before a new line is inserted in generated help menus. | 80 | `100` |
+| `koihelpmenuprefix` | characters that prefix command documentation in help menus | `koihelpmenuprefix` is printed before each command in generated help menus. | `'>>'` or `'$'` | `''` |
+| `koiwordwraplength` | maximum line length | `koiwordwraplength` defines the maximum number of characters that are printed before a new line is inserted in generated help menus. | `80` | `100` |
 | `koishowhints` | whether or not to show hints | `koishowhints` determines whether koi will print hints in the generated help menu, `1` is true, `0` is false. | `0` | `1` |
 | `koicolorprimary` | the primary output color | `koicolorprimary` is the primary output color for generated help menus. | `$__blue` | `$__teal` |
 | `koicolorsecondary` | the secondary output color | `koicolorsecondary` is the secondary output color for generated help menus. | `$__red` | `$__yellow` |
-| `koirequirehelpactions` | whether or help actions or required | `koirequirehelpactions` determines whether functions with parseable arguments must define a help action, `0` is false, `1` is true. _Note: generated help menus and the `help` command will not function properly if set to `1`, only use it in scenarios where help menus are not needed._ | `0` | `1` |
+| `koirequirehelpactions` | whether or not help actions are required | `koirequirehelpactions` determines whether functions with parseable arguments must define a help action, `0` is false, `1` is true. _Note: generated help menus and the `help` command will not function properly if set to `1`, only use it in scenarios where help menus are not needed._ | `0` | `1` |
 
 ?> **Example**<br>If you are using a wider screen and you want your word wrap to be longer, you can set `koiwordwraplength=150` at the top of your script.
 ```bash
