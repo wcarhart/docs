@@ -22,8 +22,11 @@ Konphig binds the up and down arrow keys for seraching the history. It also incr
 #### Source konphig functions, aliases, and variables {docsify-ignore}
 Finally, konphig uses the `.bashrc` file to source the konphig [functions](/bash_functions), [aliases](/bash_aliases), and [variables](/bash_variables).
 
-#### Other Bash configuration files
+#### Other Bash configuration files {docsify-ignore}
 Konphig also ships with `.bash_profile` and `.profile` files, which simply point to the `.bashrc` file:
+
+## Bookmarks
+Konphig keeps track of Chrome/Brave bookmarks in the `bookmarks/` folder.
 
 ## Hyper
 Konhpig ships with a few configurations for [Hyper](/https://hyper.is/). These configurations are mostly cosmetic (colors, font size, etc.). In addition, konphig includes a few Hyper plugins:
