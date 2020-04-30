@@ -2,6 +2,12 @@
 
 <h1 align="center">koi</h1>
 <h5 align="center">Bashful argument parsing</h5>
+<div align="center">
+  <a class="github-button ghbns" href="https://github.com/wcarhart/koi/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch wcarhart/koi on GitHub">Watch</a>
+  <a class="github-button ghbns" href="https://github.com/wcarhart/koi" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star wcarhart/koi on GitHub">Star</a>
+  <a class="github-button ghbns" href="https://github.com/wcarhart/koi/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork wcarhart/koi on GitHub">Fork</a>
+  <a class="github-button ghbns" href="https://github.com/wcarhart" data-size="large" data-show-count="true" aria-label="Follow @wcarhart on GitHub">Follow @wcarhart</a>
+</div>
 
 Koi is an argument parsing library for shell scripts. It is written entirely in Bash and allows scripts to easily define a CLI and parse command line arguments, including positional arguments, options, flags, subcommands, and more.
 
