@@ -1,8 +1,21 @@
-<!-- <p align="center"><img alt="konphig logo" src="https://willcarhart.dev/docs/konphig/_media/logo.png" /></p> -->
 <p align="center"><img alt="konphig logo" src="_media/logo.png" /></p>
 
 <h1 align="center">konphig</h1>
 <h5 align="center">Config files for safe keeping 😏</h5>
+<div align="center">
+  <span class="ghbns">
+  	<a class="github-button" href="https://github.com/wcarhart/konphig/subscription" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch wcarhart/konphig on GitHub">Watch</a>
+  </span>
+  <span class="ghbns">
+  	<a class="github-button" href="https://github.com/wcarhart/konphig" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star wcarhart/konphig on GitHub">Star</a>
+  </span>
+  <span class="ghbns">
+  	<a class="github-button" href="https://github.com/wcarhart/konphig/fork" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork wcarhart/konphig on GitHub">Fork</a>
+</span>
+  <span class="ghbns">
+  	<a class="github-button" href="https://github.com/wcarhart" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Follow @wcarhart on GitHub">Follow @wcarhart</a>
+  </span>
+</div>
 
 Konphig contains custom settings for common UNIX tools. You can think of it as a dotfiles repo, with some extra bells and whistles.
 

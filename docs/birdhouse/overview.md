@@ -2,6 +2,20 @@
 
 <h1 align="center">birdhouse</h1>
 <h5 align="center">🐦 Passive tweet watcher from the command line</h5>
+<div align="center">
+  <span class="ghbns">
+    <a class="github-button" href="https://github.com/wcarhart/birdhouse/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch wcarhart/koi on GitHub">Watch</a>
+  </span>
+  <span class="ghbns">
+    <a class="github-button" href="https://github.com/wcarhart/birdhouse" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star wcarhart/koi on GitHub">Star</a>
+  </span>
+  <span class="ghbns">
+    <a class="github-button" href="https://github.com/wcarhart/birdhouse/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork wcarhart/koi on GitHub">Fork</a>
+</span>
+  <span class="ghbns">
+    <a class="github-button" href="https://github.com/wcarhart" data-size="large" data-show-count="true" aria-label="Follow @wcarhart on GitHub">Follow @wcarhart</a>
+  </span>
+</div>
 
 Birdhouse is a command line tool for reading tweets. You can stream tweets in real time, look at a Twitter user's past tweets, and get information about different Twitter users. It is written entirely in Bash and can be installed via Homebrew.
 

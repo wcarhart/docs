@@ -3,7 +3,7 @@
 
 In addition to [kn](/kn), some of the most powerful functionalty in konphig comes from its Bash functions. Konphig has a number of different Bash functions available upon its installation. To list all of these functions, use `kn fn --list`.
 
-<button onclick="topFunction()" id="top-button" title="Go to top">Top</button>
+<button onclick="scrollToTop()" id="top-button" title="Go to top">Top</button>
 
 | Function | Description |
 |:--------:|-------------|
