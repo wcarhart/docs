@@ -155,6 +155,7 @@ function main() {
 	if (searchDir === '') {
 		console.error('err: no search directory provided')
 		exitCode = 1
+
 	} else {
 		// determine files
 		const files = getFiles(searchDir)
@@ -208,7 +209,7 @@ function main() {
 		}
 	}).finally(_ => {
 		// show metrics
-		if (!omitMetrics) {
+		if (!omitMetrics && exitCode !== 1) {
 			let passedPercentage = String(Number(100*(passed/run)).toFixed(3))
 			let failedPercentage = String(Number(100*(failed/run)).toFixed(3))
 
@@ -222,6 +223,7 @@ function main() {
 			console.log(`Found ${failed} invalid links (${failedPercentage}%)`)
 			console.log(`Tested ${run} links total`)
 		}
+
 		// make sure exit code is correct per links tested
 		process.exit(exitCode)
 	})
