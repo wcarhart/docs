@@ -20,5 +20,5 @@
   - [Author](author.md)
 
 <hr>
-<div style="text-align:center">&copy;&nbsp; Will Carhart <script type="text/javascript">document.write(new Date().getFullYear());</script></div>
+<div style="text-align:center">&copy;&nbsp; Will Carhart <span id="year"><script>document.getElementById('year').appendChild(document.createTextNode(new Date().getFullYear()))</script></span></div>
 <div style="text-align:center"><a href="https://willcarhart.dev" id="more-software"><i>More cool software</i></a></div>
