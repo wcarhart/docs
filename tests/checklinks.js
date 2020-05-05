@@ -19,7 +19,8 @@ var ignore = [
 	'http://localhost:${port}/api/v1/list',
 	'https://github.com/${user}/${repo}/archive/${version}.tar.gz',
 	'https://api.twitter.com/1.1/search/tweets.json?q=%23${item:1}&tweet_mode=extended&count=${num}${langtext}',
-	'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${item:1}&tweet_mode=extended&count=${num}'
+	'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${item:1}&tweet_mode=extended&count=${num}',
+	'https://paper.li/rottersclubx/1309216321?edition_id=03c122d0-6713-11ea-a645-0cc4'
 ]
 
 // get a list of files in a directory and its subdirectories
@@ -44,7 +45,7 @@ function getDiscreetLinks(file) {
 		const data = fs.readFileSync(file, 'utf8')
 		let links = data.match(/(https?:\/\/[^\s]+)/g)
 		if (links && links.length > 0) {
-			links = links.map(s => s.replace('"', '').replace(')', '').replace(/\.$/, '').replace(/\,$/, ''))
+			links = links.map(s => s.replace('"', '').replace(/\).*$/, '').replace(/\.$/, '').replace(/,$/, ''))
 		}
 		return links
 	} catch (e) {
@@ -93,7 +94,7 @@ function testLink(url, file) {
 					}
 				})
 			} catch (e) {
-				reject(`${url}`)
+				reject(`ERROR: ${url}`)
 			}
 		} else {
 			try {
@@ -105,7 +106,7 @@ function testLink(url, file) {
 					}
 				})
 			} catch (e) {
-				reject(`${url}`)
+				reject(`ERROR: ${url}`)
 			}
 		}
 	})
@@ -118,6 +119,7 @@ function usage() {
 	console.log('node checklinks.js [-h] [-b] DIRECTORY')
 	console.log('  -h, --help              Show this menu and exit')
 	console.log('  -b, --bad-links-only    Only show links that fail link validation')
+	console.log('  -o, --omit-metrics      Don\'t show test metrics')
 	console.log('  DIRECTORY               The directory to search for .md files containing links')
 }
 
@@ -128,6 +130,7 @@ function main() {
 	let args = process.argv.slice(2);
 	let badLinksOnly = false
 	let searchDir = ''
+	let omitMetrics = false
 
 	while (args.length > 0) {
 		switch (args[0]) {
@@ -139,6 +142,10 @@ function main() {
 			case '--help':
 				usage()
 				process.exit(exitCode)
+			case '-o':
+			case '--omit-metrics':
+				omitMetrics = true
+				break
 			default:
 				searchDir = args[0]
 		}
@@ -183,19 +190,38 @@ function main() {
 	}
 
 	// wait for all promises to be fulfilled
+	let passed = 0, failed = 0, run = 0
 	Promise.allSettled(promises).then(results => {
 		for (let k in results) {
+			run += 1
 			var result = results[k]
 			if (result.status === 'fulfilled') {
+				passed += 1
 				if (!badLinksOnly) {
 					console.log('[\x1b[32m✓\x1b[0m]', result.value)
 				}
 			} else {
+				failed += 1
 				console.error('[\x1b[31m✗\x1b[0m]', result.reason)
 				exitCode = 1
 			}
 		}
 	}).finally(_ => {
+		// show metrics
+		if (!omitMetrics) {
+			let passedPercentage = String(Number(100*(passed/run)).toFixed(3))
+			let failedPercentage = String(Number(100*(failed/run)).toFixed(3))
+
+			if (passedPercentage === '100.000') passedPercentage = '100'
+			if (failedPercentage === '100.000') failedPercentage = '100'
+			if (passedPercentage === '0.000') passedPercentage = '0'
+			if (failedPercentage === '0.000') failedPercentage = '0'
+			console.log('')
+			console.log('===== METRICS =====')
+			console.log(`Found ${passed} valid links (${passedPercentage}%)`)
+			console.log(`Found ${failed} invalid links (${failedPercentage}%)`)
+			console.log(`Tested ${run} links total`)
+		}
 		// make sure exit code is correct per links tested
 		process.exit(exitCode)
 	})
