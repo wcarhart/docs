@@ -65,3 +65,7 @@ html {
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
+
+a#more-software, a#more-software:visited, a#more-software:hover, a#more-software:active {
+	color: var(--theme-color);
+}

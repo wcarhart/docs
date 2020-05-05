@@ -11,7 +11,7 @@
 }
 
 .app-sub-sidebar li:before {
-  display: none;
+	display: none;
 }
 
 .author-icon {
@@ -27,4 +27,8 @@
 .ghbns {
 	padding-left: 1rem;
 	padding-right: 1rem;
+}
+
+a#more-software, a#more-software:visited, a#more-software:hover, a#more-software:active {
+	color: var(--theme-color);
 }
