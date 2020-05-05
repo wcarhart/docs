@@ -20,6 +20,10 @@ body {
 	height: 100%;
 }
 
+#year {
+	margin: 0;
+}
+
 .test {
 	width: 100%;
 	height: 100%;

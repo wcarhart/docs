@@ -70,3 +70,7 @@ a#more-software, a#more-software:visited, a#more-software:hover, a#more-software
 	color: var(--theme-color);
 	font-size: 0.8rem;
 }
+
+#year {
+	margin: 0;
+}

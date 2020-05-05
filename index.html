@@ -23,12 +23,21 @@
         <link rel="icon" type="image/png" sizes="25x25" href="ico/favicon-25x25.png">
         <link rel="manifest" href="ico/site.webmanifest">
 
+        <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <!-- Bootstrap to make page load faster -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!-- dynamically update year -->
+        <script>
+            let year = new Date().getFullYear();
+            $(document).ready(function() {
+                $('#year').text(year);
+            });
+        </script>
 </head>
 
 <body>
@@ -62,7 +71,7 @@
                 </div>
                 <div id="credits">
                         <a id="github-icon" href="https://github.com/wcarhart" target="_blank"><i class="fab fa-github" data-fa-transform="left-6"></i></a>
-                        <div style="text-align:center">&copy;&nbsp; Will Carhart 2020</div>
+                        <div style="text-align:center">&copy;&nbsp; Will Carhart <span id="year"></span></div>
                 </div>
         </div>
 
