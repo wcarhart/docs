@@ -209,9 +209,13 @@ function main() {
 		}
 	}).finally(_ => {
 		// show metrics
-		if (!omitMetrics && exitCode !== 1) {
+		if (!omitMetrics) {
 			let passedPercentage = String(Number(100*(passed/run)).toFixed(3))
 			let failedPercentage = String(Number(100*(failed/run)).toFixed(3))
+			if (run === 0) {
+				passedPercentage = '0'
+				failedPercentage = '0'
+			}
 
 			if (passedPercentage === '100.000') passedPercentage = '100'
 			if (failedPercentage === '100.000') failedPercentage = '100'
