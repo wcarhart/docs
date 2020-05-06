@@ -14,7 +14,7 @@ export PATH="${PATH}:${HOME}/chiller"
 ```
 
 ## Next steps
-To verify that chiller installed properly, use the `help` option.
+To verify that chiller installed properly, use the `help` subcommand.
 ```bash
 chiller help
 ```

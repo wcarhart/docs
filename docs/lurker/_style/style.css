@@ -1,0 +1,51 @@
+* {
+	text-decoration: none !important;
+}
+
+html {
+	scroll-behavior: auto;
+}
+.edit-link {
+	text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+	color: var(--theme-color);
+	transition: all 0.3s linear;
+}
+
+.app-sub-sidebar li:before {
+  display: none;
+}
+
+.author-icon {
+	padding-right: 1rem;
+}
+
+#willcarhart-icon {
+	margin-right: 1rem;
+	max-width: 1rem;
+	max-height: 1rem;
+}
+
+.inline-subtitle {
+	display: inline-block;
+	padding-bottom: 0rem;
+	padding-top: 0rem;
+	margin-bottom: 0rem;
+	margin-top: 0rem;
+}
+
+.markdown-section tr:nth-child(2n) {
+	background-color: transparent !important;
+}
+
+.ghbns {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+a#more-software, a#more-software:visited, a#more-software:hover, a#more-software:active {
+	color: var(--theme-color);
+	font-size: 0.8rem;
+}
