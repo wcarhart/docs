@@ -89,7 +89,7 @@ Positionalarray arguments can be _optional_ or _required_.
 function exemplify_positionalarray {
 	__addarg "" "arg" "positionalarray" "optional" "" "A positionalarray argument"
 	__parseargs "$@"
-	echo "args: ${args[@]}"
+	echo "args: ${arg[@]}"
 }
 ```
 _Usage:_
