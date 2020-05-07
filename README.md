@@ -26,7 +26,7 @@ _Documentation:_ https://willcarhart.dev/docs/konphig
 ### lurker
 _Repository:_ https://github.com/wcarhart/lurker
 
-_Documentation:_ Coming soon 🏗
+_Documentation:_ https://willcarhart.dev/docs/lurker
 
 ## Technologies Used
 * HTML5
