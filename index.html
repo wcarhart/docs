@@ -20,7 +20,7 @@
         <!-- icons -->
         <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="25x25" href="ico/favicon-25x25.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
         <link rel="manifest" href="ico/site.webmanifest">
 
         <!-- jQuery -->
@@ -63,11 +63,11 @@
                                 </div>
                         </div>
                         <div class="row animated fadeInUp delay-2s justify-content-center text-body">
-                                <a href="docs/koi/" id="koi-btn" class="btn btn-primary">koi</a>
-                                <a href="docs/birdhouse/" id="birdhouse-btn" class="btn btn-primary">birdhouse</a>
-                                <a href="docs/konphig/" id="konphig-btn" class="btn btn-primary">konphig</a>
-                                <a href="docs/chiller/" id="chiller-btn" class="btn btn-primary">chiller</a>
-                                <a href="docs/lurker/" id="lurker-btn" class="btn btn-primary">lurker</a>
+                                <a href="docs/koi/" id="koi-btn" class="doc-button btn btn-primary">koi</a>
+                                <a href="docs/birdhouse/" id="birdhouse-btn" class="doc-button btn btn-primary">birdhouse</a>
+                                <a href="docs/konphig/" id="konphig-btn" class="doc-button btn btn-primary">konphig</a>
+                                <a href="docs/chiller/" id="chiller-btn" class="doc-button btn btn-primary">chiller</a>
+                                <a href="docs/lurker/" id="lurker-btn" class="doc-button btn btn-primary">lurker</a>
                         </div>
                 </div>
                 <div id="credits">
@@ -124,64 +124,29 @@
                 }
             } while (!done);
 
-            if (color_curved === colors['midnight_blue'] || color_curved === colors['wet_asphalt']) {
+            if ([colors['midnight_blue'], colors['wet_asphalt'], colors['wisteria'], colors['pomegranate']].includes(color_curved)) {
+            // if (color_curved === colors['midnight_blue'] || color_curved === colors['wet_asphalt']) {
                 // text
                 $('#content').css('color', colors['clouds']);
                 $('#lead-content').css('color', colors['clouds']);
 
-                // koi button
-                $('#koi-btn').css('background-color', colors['clouds']);
-                $('#koi-btn').css('border-color', colors['clouds']);
-                $('#koi-btn').css('color', colors['midnight_blue']);
-
-                // birdhouse button
-                $('#birdhouse-btn').css('background-color', colors['clouds']);
-                $('#birdhouse-btn').css('border-color', colors['clouds']);
-                $('#birdhouse-btn').css('color', colors['midnight_blue']);
-
-                // konphig button
-                $('#konphig-btn').css('background-color', colors['clouds']);
-                $('#konphig-btn').css('border-color', colors['clouds']);
-                $('#konphig-btn').css('color', colors['midnight_blue']);
-
-                // chiller button
-                $('#chiller-btn').css('background-color', colors['clouds']);
-                $('#chiller-btn').css('border-color', colors['clouds']);
-                $('#chiller-btn').css('color', colors['midnight_blue']);
-
-                // lurker button
-                $('#lurker-btn').css('background-color', colors['clouds']);
-                $('#lurker-btn').css('border-color', colors['clouds']);
-                $('#lurker-btn').css('color', colors['midnight_blue']);
+                // buttons
+                $('.doc-button').each(function() {
+                    $(this).css('background-color', colors['clouds']);
+                    $(this).css('border-color', colors['clouds']);
+                    $(this).css('color', colors['midnight_blue']);
+                })
             } else {
                 // text
                 $('#content').css('color', colors['midnight_blue']);
                 $('#lead-content').css('color', colors['midnight_blue']);
 
-                // koi button
-                $('#koi-btn').css('background-color', colors['midnight_blue']);
-                $('#koi-btn').css('border-color', colors['midnight_blue']);
-                $('#koi-btn').css('color', colors['clouds']);
-
-                // birdhouse button
-                $('#birdhouse-btn').css('background-color', colors['midnight_blue']);
-                $('#birdhouse-btn').css('border-color', colors['midnight_blue']);
-                $('#birdhouse-btn').css('color', colors['clouds']);
-
-                // konphig button
-                $('#konphig-btn').css('background-color', colors['midnight_blue']);
-                $('#konphig-btn').css('border-color', colors['midnight_blue']);
-                $('#konphig-btn').css('color', colors['clouds']);
-
-                // chiller button
-                $('#chiller-btn').css('background-color', colors['midnight_blue']);
-                $('#chiller-btn').css('border-color', colors['midnight_blue']);
-                $('#chiller-btn').css('color', colors['clouds']);
-
-                // lurker button
-                $('#lurker-btn').css('background-color', colors['midnight_blue']);
-                $('#lurker-btn').css('border-color', colors['midnight_blue']);
-                $('#lurker-btn').css('color', colors['clouds']);
+                // buttons
+                $('.doc-button').each(function() {
+                    $(this).css('background-color', colors['midnight_blue']);
+                    $(this).css('border-color', colors['midnight_blue']);
+                    $(this).css('color', colors['clouds']);
+                })
             }
 
             $('#curved').css('background-color', color_curved);
