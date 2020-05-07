@@ -21,20 +21,25 @@ if [[ ! -d ../docs ]] ; then
 	exit 1
 fi
 
-# verify site index exists
-if [[ ! -f ../index ]] ; then
-	>&2 echo "err: missing site index, no such file docs/index.html"
+# verify global index exists
+if [[ ! -f ../index.html ]] ; then
+	>&2 echo "err: missing global index, no such file docs/index.html"
 	exit 1
 fi
 
 # get list of installed sites
+# shellcheck disable=SC2207
 sites=( $(jq -r '.registered_sites[]' < ../registry.json) )
 for site in "${sites[@]}" ; do
-	echo "Verifying ${site}..."
-
 	# verify docs folder
 	if [[ ! -d ../docs/${site} ]] ; then
 		>&2 echo "err: missing docs folder for $site, no such folder docs/docs/$site"
+		exit 1
+	fi
+
+	# verify site index
+	if [[ ! -f ../docs/${site}/index.html ]] ; then
+		>&2 echo "err: missing site index for $site, no such file docs/docs/${site}/index.html"
 		exit 1
 	fi
 
