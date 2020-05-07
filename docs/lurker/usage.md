@@ -1,5 +1,7 @@
 # Usage
 
+?>To start lurker, just type `lurker`.
+
 ## CLI
 Lurker exposes a simple-to-use CLI. You can access it with `lurker -h` or `lurker --help`.
 ```
@@ -9,8 +11,6 @@ lurker [-h] [-n] [-f FOLDSIZE] [-c COMMAND] [-s]
   -c, --command COMMAND      Run a lurker command when lurker starts (optional) 
   -s, --silent               Do not print the lurker logo when lurker starts (optional)
 ```
-
-Lurker uses a library called [koi](https://github.com/wcarhart/koi) to parse command line arguments.
 
 ## Lurker commands
 Once lurker is running, there are a few available commands.
@@ -30,6 +30,8 @@ Once lurker is running, there are a few available commands.
 | refresh | Refresh the master post list, which will reset the ordering of posts. |
 | clear | Clear the screen. |
 | exit | Quit lurker. |
+
+!><b>Note</b><br>Lurker uses a library called [koi](https://github.com/wcarhart/koi) to parse command line arguments. To learn more, read [koi's documentation](https://willcarhart.dev/docs/koi).
 
 <hr>
 <div style="text-align:center">
