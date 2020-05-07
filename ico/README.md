@@ -1,0 +1,1 @@
+All site favicons generated with https://favicon.io/favicon-converter/.
