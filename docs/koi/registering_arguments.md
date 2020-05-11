@@ -3,7 +3,7 @@
 
 To allow a function to use command line arguments, you register the arguments using koi's `__addarg` command. Arguments are registered on a by-function basis, meaning that each individual function can have it's own registered arguments.
 
-You can also add arguments to _argument groups_ (see [Using argument groups](/using_argument_groups)).
+You can also add arguments to _argument groups_ (see [Using argument groups](/using_argument_groups)) and allow arguments to _depend on one another_ (see [Using dependent arguments](/using_dependent_arguments)).
 
 ## Using __addarg
 
@@ -46,7 +46,7 @@ The action for a registered argument describes what koi should do when the optio
 
 **Restrictions:**
 * must be a valid action from the list above
-* required, and cannot be blank
+* required, and cannot be left blank
 
 ### Requireds
 The required field describes whether or not an registered option is required, and thus can only be either _required_ or _optional_.

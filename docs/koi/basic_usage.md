@@ -64,6 +64,8 @@ This may look complicated to use, but it's easier than it looks.
 
 * To learn more about using argument groups (such as mutual exclusivity), see [Using argument groups](/using_argument_groups).
 
+* To learn more about using dependent arguments (arguments that depend on one another), see [Using dependent arguments](/using_dependent_arguments).
+
 <hr>
 <div style="text-align:center">
 	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/basic_usage.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
