@@ -47,6 +47,62 @@ The dependency argument is the argument on which all of the dependent arguments 
 * must be the last argument in the `__adddep` call
 
 ## Examples
+Here are a few helpful examples for how to use `__adddep`. Please refer to [Examples](/examples) for more.
+
+### Authenticate via OAuth2
+```bash
+function authenticate {
+	__addarg "-h" "--help" "help" "optional" "" "Authenticate via OAuth2"
+	__addarg "" "user" "positionalvalue" "required" "" "The user to authenticate"
+	__addarg "-p" "--password" "storevalue" "optional" "" "The user's password"
+	__addarg "-f" "--usefiles" "flag" "optional" "" "Instead of typing the password on stdin, read it from a file"
+	__addarg "-s" "--secretfile" "storevalue" "optional" "" "The file containing the secret key (the user's password)"
+	__addgroup "authchoice" "XOR" "required" "--password" "--usefiles"
+	__adddep "--secretfile" "dependson" "--usefiles"
+	__parseargs "$@"
+
+	if [[ $usefiles -eq 1 ]] ; then
+		curl -s -u "${user}:$(cat "$secretfile")" --data 'grant_type=client_credentials' localhost:8000/oauth2/token
+	else
+		curl -s -u "${user}:${password}" --data 'grant_type=client_credentials' localhost:8000/oauth2/token
+	fi
+}
+```
+_Usage:_
+```
+authenticate [-h] (-p PASSWORD | -f) [-s SECRETFILE] USER
+```
+
+### Install something via a variable package manager
+```bash
+function install-lib {
+	__addarg "-h" "--help" "help" "optional" "" "Add a library to a trackable list"
+	__addarg "" "lib" "positionalvalue" "required" "" "The library to add"
+	__addarg "-b" "--brew" "flag" "optional" "" "The new library should be installed via Homebrew"
+	__addarg "-c" "--cask" "flag" "optional" "" "The new library is be a Homebrew cask"
+	__adddep "--cask" "dependson" "--brew"
+	__addarg "-y" "--yarn" "flag" "optional" "" "The new library should be installed via yarn"
+	__addarg "-p" "--pip" "flag" "optional" "" "The new library should be installed via pip"
+	__addgroup "flags" "XOR" "required" "--brew" "--yarn" "--pip"
+	__parseargs "$@"
+
+	if [[ $brew -eq 1 ]] ; then
+		if [[ $cask -eq 1 ]] ; then
+			brew cask install "$lib"
+		else
+			brew install "$lib"
+		fi
+	elif [[ $yarn -eq 1 ]] ; then
+		yarn global add "$lib"
+	else
+		pip install "$lib"
+	fi
+}
+```
+_Usage:_
+```
+install-lib [-h] (-b | -y | -p) [-c] LIB
+```
 
 <hr>
 <div style="text-align:center">
