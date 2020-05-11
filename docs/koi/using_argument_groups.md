@@ -54,6 +54,7 @@ Group arguments are the registered arguments that are in the group. The minimum 
 * must be a previously registered argument via `__addarg` (see [Registering arguments](/registering_arguments))
 * cannot be an argument with a `help`, `positionalvalue`, or `positionalarray` action
 * registered argument cannot be required
+* arguments in a mutually exclusive group (where the group property is `XOR`) cannot be dependent on one another (see [Using dependent arguments](/using_dependent_arguments))
 
 ## Examples
 Here are a few helpful examples for how to use `__addgroup`. Please refer to [Examples](/examples) for more.
