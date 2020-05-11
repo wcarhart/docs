@@ -1,5 +1,5 @@
-# Using Subcommands
-!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+# Subcommands
+!> Before starting this section, make sure you've read [registering arguments](/registering_arguments) and [parsing arguments](/parsing_arguments).
 
 Another powerful feature of koi is the ability to parse subcommands.
 
@@ -146,5 +146,5 @@ _Usage:_
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/using_subcommands.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/subcommands.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

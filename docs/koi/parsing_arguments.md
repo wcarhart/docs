@@ -1,5 +1,5 @@
 # Parsing arguments
-!> Before starting this section, make sure you've read [Using koi](/using_koi) and [Registering arguments](/registering_arguments).
+!> Before starting this section, make sure you've read [using koi](/using_koi) and [registering arguments](/registering_arguments).
 
 After registering arguments with `__addarg`, koi parses arguments with the `__parseargs` function.
 

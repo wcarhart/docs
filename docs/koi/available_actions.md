@@ -1,5 +1,5 @@
 # Available actions
-!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+!> Before starting this section, make sure you've read [registering arguments](/registering_arguments) and [parsing arguments](/parsing_arguments).
 
 When registering arguments, koi uses _actions_ to define what should happen when each arguemnt is parsed. This section will go into depth about each available action. The available actions are `flag`, `storeavlue`, `storearray`, `positionalvalue`, `positionalarray`, and `help`.
 

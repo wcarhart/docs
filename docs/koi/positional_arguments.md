@@ -1,5 +1,5 @@
-# Using positional arguments
-!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+# Positional Arguments
+!> Before starting this section, make sure you've read [registering arguments](/registering_arguments) and [parsing arguments](/parsing_arguments).
 
 Options can be helpful because their purpose is often stated in their name. For example, an argument called `--file` probably needs a path to a file. This is helpful to the end user of a script because they can deduce what arguments they need to provide.
 
@@ -68,5 +68,5 @@ get_tarball [-h] [-u USER] -v VERSION REPO
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/using_positional_arguments.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/positional_arguments.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

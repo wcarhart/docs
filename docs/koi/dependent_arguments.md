@@ -1,4 +1,6 @@
-# Using dependent arguments
+# Dependent Arguments
+!> Before starting this section, make sure you've read [registering arguments](/registering_arguments) and [parsing arguments](/parsing_arguments).
+
 Sometimes it is helpful to have an argument's usage be tied to another argument's presence. Koi accomplishes this with _dependent arguments_.
 
 ?><b>Note</b><br>A _dependent argument_ is one whose presence, or lack thereof, is tied to the presence of another argument (refered to as the _dependency argument_).
@@ -73,7 +75,7 @@ _Usage:_
 authenticate [-h] (-p PASSWORD | -f) [-s SECRETFILE] USER
 ```
 
-### Install something via a variable package manager
+### Install a new library
 ```bash
 function install-lib {
 	__addarg "-h" "--help" "help" "optional" "" "Add a library to a trackable list"
@@ -106,5 +108,5 @@ install-lib [-h] (-b | -y | -p) [-c] LIB
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/using_dependent_arguments.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/dependent_arguments.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>

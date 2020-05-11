@@ -9,9 +9,9 @@ Parsing arguments with koi can be simplified into two steps:
 1. Define and register arguments to a function (with the `__addarg` command)
 2. Parse the arguments passed to the function (with the `__parseargs` command)
 
-See [Registering arguments](/registering_arguments).
+See [registering arguments](/registering_arguments).
 
-See [Parsing arguments](/parsing_arguments).
+See [parsing arguments](/parsing_arguments).
 
 ### A practical example
 For instance, if we have a function `greet`, we can define arguments like so:
@@ -54,17 +54,17 @@ Greet a person by name
 ### Diving deeper
 This may look complicated to use, but it's easier than it looks.
 
-* To learn more about adding arguments, see [Registering arguments](/registering_arguments).
+* To learn more about adding arguments, see [registering arguments](/registering_arguments).
 
-* To learn more about parsing arguments, see [Parsing arguments](/parsing_arguments).
+* To learn more about parsing arguments, see [parsing arguments](/parsing_arguments).
 
-* To learn more about using CLI subcommands, see [Using subcommands](/using_subcommands).
+* To learn more about using CLI subcommands, see [subcommands](/subcommands).
 
-* To learn more about using positional arguments, see [Using positional arguments](/using_positional_arguments).
+* To learn more about using positional arguments, see [positional arguments](/positional_arguments).
 
-* To learn more about using argument groups (such as mutual exclusivity), see [Using argument groups](/using_argument_groups).
+* To learn more about using argument groups (such as mutual exclusivity), see [argument groups](/argument_groups).
 
-* To learn more about using dependent arguments (arguments that depend on one another), see [Using dependent arguments](/using_dependent_arguments).
+* To learn more about using dependent arguments (arguments that depend on one another), see [dependent arguments](/dependent_arguments).
 
 <hr>
 <div style="text-align:center">

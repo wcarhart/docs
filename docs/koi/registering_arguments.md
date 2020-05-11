@@ -3,7 +3,7 @@
 
 To allow a function to use command line arguments, you register the arguments using koi's `__addarg` command (short for _add argument_). Arguments are registered on a by-function basis, meaning that each individual function can have it's own registered arguments.
 
-You can also add arguments to _argument groups_ (see [Using argument groups](/using_argument_groups)) and allow arguments to _depend on one another_ (see [Using dependent arguments](/using_dependent_arguments)).
+You can also add arguments to _argument groups_ (see [argument groups](/argument_groups)) and allow arguments to _depend on one another_ (see [dependent arguments](/dependent_arguments)).
 
 ## Using __addarg
 
@@ -29,7 +29,7 @@ Long options are the full identifier for the option. They are denoted by two das
 **Examples:** `--help`, `--name` `--number`
 
 **Restrictions:**
-* must start with two dashes (except in the case of [positional arguments](/using_positional_arguments))
+* must start with two dashes (except in the case of [positional arguments](/positional_arguments))
 * must be alphanumeric, and cannot start with a number
 * must be unique among defined long options for a function
 * cannot be an illegal word (see [Are there any illegal names for registered options?](/faq?id=are-there-any-illegal-names-for-registered-options))

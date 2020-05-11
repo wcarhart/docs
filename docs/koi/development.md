@@ -101,6 +101,8 @@ function koitest_run {
 }
 ```
 
+?><b>Note</b><br>If you want to view the actual _stdout_ and _sterr_ of your test, you can use the `-p`/`--print` option with `runtest`, like so: `runtest --print my_test "expected_value" "argument" "argument"`.
+
 You can refer to any of the other test files for examples of passing tests.
 
 To run your test, simply use the `koitest` script from the `tests/` directory.

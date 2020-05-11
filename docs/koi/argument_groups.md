@@ -1,5 +1,5 @@
-# Using argument groups
-!> Before starting this section, make sure you've read [Registering arguments](/registering_arguments) and [Parsing arguments](/parsing_arguments).
+# Argument Groups
+!> Before starting this section, make sure you've read [registering arguments](/registering_arguments) and [parsing arguments](/parsing_arguments).
 
 Sometimes it is helpful to group a script's arguments together. This can be used to require two arguments to be used together, or to prevent more than one optional argument from being used.
 
@@ -127,5 +127,5 @@ multiple [-h] (-f | -g) (-g | -v)
 
 <hr>
 <div style="text-align:center">
-	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/using_argument_groups.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
+	<a class="edit-link" href="https://github.com/wcarhart/docs/blob/master/docs/koi/argument_groups.md" target="_blank"><i class="fas fa-edit"></i> Edit this page</a>
 </div>
