@@ -364,7 +364,7 @@ function __verify_http_method {
 ### Install a new library
 ```bash
 function install-lib {
-	__addarg "-h" "--help" "help" "optional" "" "Add a library to a trackable list"
+	__addarg "-h" "--help" "help" "optional" "" "Install a library via a variable package manager"
 	__addarg "" "lib" "positionalvalue" "required" "" "The library to add"
 	__addarg "-b" "--brew" "flag" "optional" "" "The new library should be installed via Homebrew"
 	__addarg "-c" "--cask" "flag" "optional" "" "The new library is be a Homebrew cask"

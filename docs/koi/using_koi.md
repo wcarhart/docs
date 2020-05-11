@@ -31,7 +31,7 @@ koidescription="A brief description of my script"
 There are many more configurable options in koi. To see the full list, see [Configuration](/configuration).
 
 ### Exiting on errors
-Koi exits on errors by default. Internal koi functions return non-zero exit codes, which in turn help koi to exit when problems arise while parsing arguments. You can continue on errors with `set +e`. Make sure you do so after `source koi`.
+Koi exits on errors by default. Internal koi functions return non-zero exit codes, which in turn help koi to exit when problems arise while parsing arguments. You can continue on errors with `set +e`. Make sure you do so after `source koi`, or put `set +e` after the `__parseargs` command in each function that parses arguments (see [parsing arguments](/parsing_arguments)).
 ```bash
 #!/bin/bash
 source koi

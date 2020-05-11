@@ -12,12 +12,12 @@ __parseargs "$@"
 
 When you use `__parseargs`, koi reads in argument values into _variables named after the alphanumeric version of the registered long option_ for the argument. This means that if the long option is `--myargument`, the value of the parsed argument will be available in the variable `$myargument`.
 
-!> **Note**<br>`__parseargs` must be called after all `__addarg` statements, or else koi will not function properly.
+!> **Note**<br>`__parseargs` must be called after all `__addarg` statements.
 
 ## Dealing with variables
-**Variables defined by __parseargs are declared in the global scope.** If you define an argument `--option`, the variable `$option` will be available throughout your script. _This mean it will probably be unwise to name your options things like `--IFS` or `--continue`, because the variable `$IFS` will be overwritten, while `$continue` is invalid in Bash_.
+**Variables defined by __parseargs are declared in the global scope.** If you define an argument `--option`, the variable `$option` will be available throughout your script.
 
-**Variables defined by __parseargs are alphanumeric.** If you define a long option as `--myargument`, the variable will be `$myargument` and not `$--myargument`. This is also why `long options cannot start with a number`, because that would produce an invalid Bash variable.
+**Variables defined by __parseargs are alphanumeric.** If you define a long option as `--myargument`, the variable will be `$myargument` and not `$--myargument`. This is also why _long options cannot start with a number_, because that would produce an invalid Bash variable.
 
 ## Dealing with arrays
 **Positionalarray and storearray arguments parsed by __parseargs will produce array variables.** Unlike _storevalue_ and _positionalvalue_, parsing _storearray_ and _positionalarray_ arguments will produce array variables. This means that if you register an argument with a long option of `--myargument` and an action of `storearray`, then the variable `$myargument` would be an array that you could iterate over with `${myargument[@]}`.

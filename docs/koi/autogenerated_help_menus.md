@@ -24,7 +24,7 @@ Koi will autogenerate a usage statement to be printed in the help menu. It has a
 Long options are not listed in the usage statement for brevity, but rather are printed in the argument documentation below. In the argument documentation, `(+)` mean that the associated argument is an array, and can take multiple arguments.
 
 ## Help menus without subcommands
-If you are use a `__koimain` (see [Using subcommands](/using_subcommands)), then the help menu will be generated on a _by-script_ basis. This means that the usage will be for the whole script, rather than for individual subcommands. You can show the help menu with the `-h` or `--help` options, provided they are registered.
+If you are use a `__koimain` (see [subcommands](/subcommands)), then the help menu will be generated on a _by-script_ basis. This means that the usage will be for the whole script, rather than for individual subcommands. You can show the help menu with the `-h` or `--help` options, provided they are registered.
 
 **Example**
 ```bash
@@ -58,7 +58,7 @@ myscript.sh [-h] [-a ARG] POS
 ```
 
 ## Help menus with subcommands
-If you are using subcommands (see [Using Subcommands](/using_subcommands)), then the help menu will have entry for each available function defined in your script. You can show the regular help menu with `help`, `-h`, or `--help`. You can show the verbose help menu with `help -v`, `help --verbose`, or `-hv`. You can also show just the command documentation with `list -d` or `list --docs`.
+If you are using subcommands (see [subcommands](/subcommands)), then the help menu will have entry for each available function defined in your script. You can show the regular help menu with `help`, `-h`, or `--help`. You can show the verbose help menu with `help -v`, `help --verbose`, or `-hv`. You can also show just the command documentation with `list -d` or `list --docs`.
 
 **Example**
 ```bash
@@ -139,7 +139,7 @@ myscript.sh list [-h] [-d]
 List all available commands
   -d, --docs    If included, print command documentation (optional)
 ```
-*[Why are there the extra subcommands `help` and `list`?](/using_subcommands?id=default-subcommands)*
+*[Why are there the extra subcommands `help` and `list`?](/subcommands?id=default-subcommands)*
 
 <hr>
 <div style="text-align:center">

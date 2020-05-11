@@ -120,7 +120,7 @@ Start a workflow given a workflow script
 ```
 
 ## Dive in
-Easily install koi with `brew install wcarhart/tools/koi`, or read [Installation](/installation) for more installation options. To get started using koi, check out the [Basic usage](/basic-usage) section.
+Easily install koi with `brew install wcarhart/tools/koi`, or read [Installation](/installation) for more installation options. To get started using koi, check out the [using koi](/using_koi) and [basic usage](/basic_usage) sections.
 
 ## Author
 [Will Carhart](https://github.com/wcarhart) is the author of koi. Check the [Author](/author) section for more information.

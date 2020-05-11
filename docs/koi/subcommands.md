@@ -3,12 +3,12 @@
 
 Another powerful feature of koi is the ability to parse subcommands.
 
-You can either attach your commands to your script:
+You can either attach your arguments to your script:
 ```bash
 ./myscript.sh -a arg -b arg
 ```
 
-Or, you can attach your commands to subcommands:
+Or, you can attach your arguments to subcommands:
 ```bash
 ./myscript.sh subcommand -a arg -b arg
 ```

@@ -20,7 +20,8 @@ var ignore = [
 	'https://github.com/${user}/${repo}/archive/${version}.tar.gz',
 	'https://api.twitter.com/1.1/search/tweets.json?q=%23${item:1}&tweet_mode=extended&count=${num}${langtext}',
 	'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${item:1}&tweet_mode=extended&count=${num}',
-	'https://paper.li/rottersclubx/1309216321?edition_id=03c122d0-6713-11ea-a645-0cc4'
+	'https://paper.li/rottersclubx/1309216321?edition_id=03c122d0-6713-11ea-a645-0cc4',
+	'https://domain.com/artifacts?id=${artifact}'
 ]
 
 // get a list of files in a directory and its subdirectories

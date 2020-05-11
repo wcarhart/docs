@@ -13,7 +13,7 @@
   - [Parsing arguments](parsing_arguments.md)
   - [Verifying arguments](verifying_arguments.md)
 
-- Arguments Types
+- Special Argument Types
 
   - [Positional Arguments](positional_arguments.md)
   - [Subcommands](subcommands.md)
