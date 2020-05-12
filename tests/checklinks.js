@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const http = require('http')
 const https = require('https')
+const dns = require('dns')
 
 // ignore these links
 var ignore = [
@@ -82,35 +83,58 @@ function getImplicitLinks(file) {
 	}
 }
 
+// see if domain can be resolved
+function resolveDomain(hostname, url, file) {
+	return new Promise((resolve, reject) => {
+		let obj = {'file': `${file}`, 'hostname': `${hostname}`, 'url': `${url}`}
+		dns.lookup(hostname, (err, address, family) => {
+			if (err) reject(obj)
+			resolve(obj)
+		})
+	})
+}
+
 // test the validity of a URL
 function testLink(url, file) {
 	return new Promise((resolve, reject) => {
+		let obj = {'file': `${file}`, 'url': `${url}`, 'statusCode': null}
 		if (url.startsWith('https')) {
 			try {
 				https.get(url, (response) => {
+					obj.statusCode = response.statusCode
 					if (response.statusCode >= 200 && response.statusCode < 400) {
-						resolve(`${file}: ${url}`)
+						resolve(obj)
 					} else {
-						reject(`${file}: ${url}`)
+						reject(obj)
 					}
 				})
 			} catch (e) {
-				reject(`ERROR: ${url}`)
+				reject(obj)
 			}
 		} else {
 			try {
 				http.get(url, (response) => {
+					obj.statusCode = response.statusCode
 					if (response.statusCode >= 200 && response.statusCode < 400) {
-						resolve(`${file}: ${url}`)
+						resolve(obj)
 					} else {
-						reject(`${file}: ${url}`)
+						reject(obj)
 					}
 				})
 			} catch (e) {
-				reject(`ERROR: ${url}`)
+				reject(obj)
 			}
 		}
 	})
+}
+
+// extract the hostname from a URL
+function extractHostname(url) {
+	let hostname = url
+	hostname = hostname.replace(/^https:\/\//, '')
+	hostname = hostname.replace(/^http:\/\//, '')
+	hostname = hostname.replace(/\/.*$/, '')
+	return hostname
 }
 
 // show usage
@@ -160,7 +184,7 @@ function main() {
 	} else {
 		// determine files
 		const files = getFiles(searchDir)
-		var promises = []
+		var domainResolutionPromises = []
 		var linkCount = 0
 		for (let i in files) {
 
@@ -182,7 +206,7 @@ function main() {
 
 			// start promises for sending requests
 			for (let j in links) {
-				promises.push(testLink(links[j], file))
+				domainResolutionPromises.push(resolveDomain(extractHostname(links[j]), links[j], file))
 			}
 			linkCount += links.length
 		}
@@ -191,46 +215,64 @@ function main() {
 		console.log(`Found ${files.length} files and ${linkCount} links total...`)
 	}
 
-	// wait for all promises to be fulfilled
+	// wait for all domainResolutionPromises to be fulfilled
+	let validLinkPromises = []
 	let passed = 0, failed = 0, run = 0
-	Promise.allSettled(promises).then(results => {
+	Promise.allSettled(domainResolutionPromises).then(results => {
 		for (let k in results) {
 			run += 1
 			var result = results[k]
 			if (result.status === 'fulfilled') {
-				passed += 1
-				if (!badLinksOnly) {
-					console.log('[\x1b[32m✓\x1b[0m]', result.value)
-				}
+				validLinkPromises.push(testLink(result.value.url, result.value.file))
 			} else {
 				failed += 1
-				console.error('[\x1b[31m✗\x1b[0m]', result.reason)
+				console.error(`[\x1b[31m✗\x1b[0m] ${result.reason.file}: ${result.reason.url} (failed domain resolution)`)
 				exitCode = 1
 			}
 		}
-	}).finally(_ => {
-		// show metrics
-		if (!omitMetrics) {
-			let passedPercentage = String(Number(100*(passed/run)).toFixed(3))
-			let failedPercentage = String(Number(100*(failed/run)).toFixed(3))
-			if (run === 0) {
-				passedPercentage = '0'
-				failedPercentage = '0'
+	}).then(outerResults => {
+		Promise.allSettled(validLinkPromises).then(results => {
+			for (let l in results) {
+				var result = results[l]
+				if (result.status === 'fulfilled') {
+					passed += 1
+					if (!badLinksOnly) {
+						console.log(`[\x1b[32m✓\x1b[0m] ${result.value.file}: ${result.value.url}`)
+					}
+				} else {
+					failed += 1
+					console.error(`[\x1b[31m✗\x1b[0m] ${result.reason.file}: ${result.reason.url} (${result.reason.statusCode})`)
+					exitCode = 1
+				}
+			}
+		}).finally(_ => {
+			// show metrics
+			if (!omitMetrics) {
+				let passedPercentage = String(Number(100*(passed/run)).toFixed(3))
+				let failedPercentage = String(Number(100*(failed/run)).toFixed(3))
+				if (run === 0) {
+					passedPercentage = '0'
+					failedPercentage = '0'
+				}
+
+				let passed_text = passed === 1 ? 'link' : 'links'
+				let failed_text = failed === 1 ? 'link' : 'links'
+				let run_text = run === 1 ? 'link' : 'links'
+
+				if (passedPercentage === '100.000') passedPercentage = '100'
+				if (failedPercentage === '100.000') failedPercentage = '100'
+				if (passedPercentage === '0.000') passedPercentage = '0'
+				if (failedPercentage === '0.000') failedPercentage = '0'
+				console.log('')
+				console.log('===== METRICS =====')
+				console.log(`Found ${passed} valid ${passed_text} (${passedPercentage}%)`)
+				console.log(`Found ${failed} invalid ${failed_text} (${failedPercentage}%)`)
+				console.log(`Tested ${run} ${run_text} total`)
 			}
 
-			if (passedPercentage === '100.000') passedPercentage = '100'
-			if (failedPercentage === '100.000') failedPercentage = '100'
-			if (passedPercentage === '0.000') passedPercentage = '0'
-			if (failedPercentage === '0.000') failedPercentage = '0'
-			console.log('')
-			console.log('===== METRICS =====')
-			console.log(`Found ${passed} valid links (${passedPercentage}%)`)
-			console.log(`Found ${failed} invalid links (${failedPercentage}%)`)
-			console.log(`Tested ${run} links total`)
-		}
-
-		// make sure exit code is correct per links tested
-		process.exit(exitCode)
+			// make sure exit code is correct per links tested
+			process.exit(exitCode)
+		})
 	})
 }
 
