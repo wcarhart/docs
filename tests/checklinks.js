@@ -95,19 +95,39 @@ function resolveDomain(hostname, url, file) {
 }
 
 // test the validity of a URL
-function testLink(url, file) {
-	return new Promise((resolve, reject) => {
+async function testLink(url, file) {
+	return new Promise(async (resolve, reject) => {
+		let attempts = 0
+		let sleeptime = 1000
+		let mutex = false
 		let obj = {'file': `${file}`, 'url': `${url}`, 'statusCode': null}
 		if (url.startsWith('https')) {
 			try {
-				https.get(url, (response) => {
-					obj.statusCode = response.statusCode
-					if (response.statusCode >= 200 && response.statusCode < 400) {
+				while (attempts < 5) {
+					let httpsPromise = new Promise(async (good, bad) => {
+						https.get(url, async (response) => {
+							if (response.statusCode >= 200 && response.statusCode < 400) {
+								good(response.statusCode)
+							} else {
+								bad(response.statusCode)
+							}
+						})
+					})
+					await httpsPromise.then(async result => {
+						obj.statusCode = result
 						resolve(obj)
-					} else {
-						reject(obj)
-					}
-				})
+					}).catch(async error => {
+						obj.statusCode = error
+						if (error === 429) {
+							await setTimeout(() => { ; }, sleeptime)
+							attempts += 1
+							sleeptime *= 2
+						} else {
+							reject(obj)
+						}
+					})
+				}
+				reject(obj)
 			} catch (e) {
 				reject(obj)
 			}
@@ -148,7 +168,7 @@ function usage() {
 	console.log('  DIRECTORY               The directory to search for .md files containing links')
 }
 
-function main() {
+async function main() {
 	let exitCode = 0
 
 	// determine CLI usage
@@ -217,8 +237,9 @@ function main() {
 
 	// wait for all domainResolutionPromises to be fulfilled
 	let validLinkPromises = []
+	let statusCodes = []
 	let passed = 0, failed = 0, run = 0
-	Promise.allSettled(domainResolutionPromises).then(results => {
+	await Promise.allSettled(domainResolutionPromises).then(results => {
 		for (let k in results) {
 			run += 1
 			var result = results[k]
@@ -230,8 +251,8 @@ function main() {
 				exitCode = 1
 			}
 		}
-	}).then(outerResults => {
-		Promise.allSettled(validLinkPromises).then(results => {
+	}).then(async outerResults => {
+		await Promise.allSettled(validLinkPromises).then(results => {
 			for (let l in results) {
 				var result = results[l]
 				if (result.status === 'fulfilled') {
@@ -242,6 +263,7 @@ function main() {
 				} else {
 					failed += 1
 					console.error(`[\x1b[31m✗\x1b[0m] ${result.reason.file}: ${result.reason.url} (${result.reason.statusCode})`)
+					statusCodes.push(result.reason.statusCode)
 					exitCode = 1
 				}
 			}
@@ -263,10 +285,16 @@ function main() {
 				if (failedPercentage === '100.000') failedPercentage = '100'
 				if (passedPercentage === '0.000') passedPercentage = '0'
 				if (failedPercentage === '0.000') failedPercentage = '0'
+
+				let codes = [...new Set(statusCodes)].join(', ')
+				let codeText = `(${codes})`
+				if (codes === '') {
+					codeText = ''
+				}
 				console.log('')
 				console.log('===== METRICS =====')
 				console.log(`Found ${passed} valid ${passed_text} (${passedPercentage}%)`)
-				console.log(`Found ${failed} invalid ${failed_text} (${failedPercentage}%)`)
+				console.log(`Found ${failed} invalid ${failed_text} (${failedPercentage}%) ${codeText}`)
 				console.log(`Tested ${run} ${run_text} total`)
 			}
 
