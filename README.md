@@ -1,4 +1,6 @@
 # docs
+![CI](https://github.com/wcarhart/docs/workflows/CI/badge.svg)
+
 This is the documentation site for Will Carhart's repositories. It is deployed to https://willcarhart.dev/.
 
 ## Repositories Supported
