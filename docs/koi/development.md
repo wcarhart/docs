@@ -1,6 +1,8 @@
 # Development
 Koi is under active development. If you notice a bug or would like to request a new feature, please [open a new issue on Github](https://github.com/wcarhart/koi/issues/new).
 
+<img alt="CI" src="https://github.com/wcarhart/koi/workflows/CI/badge.svg">
+
 ### Contributing
 If you'd like to contribute to koi, please use the following steps to get started.
 

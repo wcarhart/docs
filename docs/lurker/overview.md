@@ -101,6 +101,8 @@ Easily install lurker with `brew install wcarhart/tools/lurker`. For more instal
 ## Contributing {docsify-ignore}
 Lurker is under active development and welcomes contributions. If you see a bug or would like to request a new feature, please [open a new issue on GitHub](https://github.com/wcarhart/lurker/issues/new).
 
+<img alt="CI" src="https://github.com/wcarhart/koi/workflows/CI/badge.svg">
+
 If you'd like to contribute to lurker, please use the following steps to get started.
 
 1. Fork or clone the lurker repository.

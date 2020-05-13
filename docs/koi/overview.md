@@ -11,7 +11,7 @@
   </span>
   <span class="ghbns">
     <a class="github-button" href="https://github.com/wcarhart/koi/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork wcarhart/koi on GitHub">Fork</a>
-</span>
+  </span>
   <span class="ghbns">
     <a class="github-button" href="https://github.com/wcarhart" data-size="large" data-show-count="true" aria-label="Follow @wcarhart on GitHub">Follow @wcarhart</a>
   </span>

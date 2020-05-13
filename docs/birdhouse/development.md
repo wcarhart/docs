@@ -1,6 +1,8 @@
 # Development
 Birdhouse is under active development. If you notice a bug or would like to request a new feature, please [open a new issue on Github](https://github.com/wcarhart/birdhouse/issues/new).
 
+<img alt="CI" src="https://github.com/wcarhart/birdhouse/workflows/CI/badge.svg">
+
 ### Contributing
 If you'd like to contribute to birdhouse, please use the following steps to get started.
 
