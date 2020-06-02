@@ -53,7 +53,7 @@
 | `local` | `!git log --oneline --no-merges origin/$(git branch \| grep \\* \| cut -d ' ' -f2)..HEAD` | Review your local commits before a push. |
 | `graph` | `log --graph --all --decorate --stat --date=iso` | Graph complex logs. |
 | `undo` | `reset HEAD~1 --mixed` | Undo the last commit. |
-| `clean` | `"!f() { git branch --merged "${1:-master}" \| grep -v " ${1:-master}$" \| xargs git branch -d; }; f"` | Remove local branches that do not exist in the remote. |
+| `tidy` | `"!f() { git fetch ; git branch --merged "${1:-master}" \| grep -v " ${1:-master}$" \| xargs git branch -d; }; f"` | Remove local branches that do not exist in the remote. |
 | `all` | `!git submodule foreach git pull origin master` | Pull all submodules. |
 | `default` | `"!f() { git remote show \"${1:-origin}\" \| grep \"HEAD branch\" \| cut -d \":\" -f 2; }; f"` | Get the default branch. |
 
