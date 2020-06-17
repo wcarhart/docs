@@ -12,7 +12,7 @@
 | `LESS_TERMCAP_ue` | `\e[0m` | - |
 | `LESS_TERMCAP_us` | `\e[1;4;31m` | - |
 
-## Shell stuff
+## Shell history
 
 | Variable | Value | Description |
 |:--------:|:-----:|-------------|
