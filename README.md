@@ -1,7 +1,11 @@
 # docs
 ![CI](https://github.com/wcarhart/docs/workflows/CI/badge.svg)
 
-This is the documentation site for Will Carhart's repositories. It is deployed to https://willcarhart.dev/.
+> **🚨 Heads up**
+>
+> This repository is now deprecated. It is preserved as an archive and available at [old.willcarhart.dev](https://old.willcarhart.dev) for historical purposes.
+
+This is the documentation site for Will Carhart's repositories. It is deployed to https://old.willcarhart.dev/.
 
 ## Repositories Supported
 
