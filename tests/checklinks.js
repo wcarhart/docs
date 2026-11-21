@@ -6,6 +6,9 @@ const http = require('http')
 const https = require('https')
 const dns = require('dns')
 
+// HTTP checks need an absolute origin; allow local and preview deployments.
+const siteOrigin = new URL(process.env.DOCS_ORIGIN || 'https://old.willcarhart.dev').origin
+
 // ignore these links
 var ignore = [
 	'http://ow.ly/urTv50zhiP6',
@@ -64,14 +67,17 @@ function getImplicitLinks(file) {
 		let links = data.match(/\[([^\[]+)\](\(.*?\))/gm)
 		if (links && links.length > 0) {
 			links = links.map(s => {
-				let link = s.match(/\[([^\[]+)\]\((.*)\)/)[2]
+				let target = s.match(/\[([^\[]+)\]\((.*)\)/)[2]
+				let link = target.replace(/\s+['"].*$/, '')
 				if (link.startsWith('http')) {
 					return link
+				} else if (link.startsWith('/') && target.includes(':ignore')) {
+					return new URL(link, siteOrigin).href
 				} else {
 					if (link.endsWith('.md')) {
-						return `https://willcarhart.dev/docs/${app}/#/${link.split('.md')[0]}`
+						return `${siteOrigin}/docs/${app}/#/${link.split('.md')[0]}`
 					} else {
-						return `https://willcarhart.dev/docs/${app}/#/${link}`
+						return `${siteOrigin}/docs/${app}/#/${link}`
 					}
 				}
 			})

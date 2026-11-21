@@ -7,7 +7,7 @@ No, konphig only supports Bash.
 Konphig has many different configurations written in different configuration languages. All of the Bash configurations are written in Bash, as well as the konphig CLI manager, [kn](/kn).
 
 ### How does `kn` parse complex arguments?
-`kn` uses an argument parsing library called _koi_ to parse command line arguments. Check out [koi's repository](https://github.com/wcarhart/koi) or [koi's documentation](https://willcarhart.dev/docs/koi).
+`kn` uses an argument parsing library called _koi_ to parse command line arguments. Check out [koi's repository](https://github.com/wcarhart/koi) or [koi's documentation](/docs/koi/ ':ignore').
 
 ### Why do I need to both install `kn` and clone the konphig repo?
 `kn` is used to interact with the konphig files. To interact with konphig files, the konphig repo needs to be cloned locally.

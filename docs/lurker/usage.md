@@ -31,7 +31,7 @@ Once lurker is running, there are a few available commands.
 | clear | Clear the screen. |
 | exit | Quit lurker. |
 
-!><b>Note</b><br>Lurker uses a library called [koi](https://github.com/wcarhart/koi) to parse command line arguments. To learn more, read [koi's documentation](https://willcarhart.dev/docs/koi).
+!><b>Note</b><br>Lurker uses a library called [koi](https://github.com/wcarhart/koi) to parse command line arguments. To learn more, read [koi's documentation](/docs/koi/ ':ignore').
 
 <hr>
 <div style="text-align:center">

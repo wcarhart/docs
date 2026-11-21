@@ -1,4 +1,4 @@
-<p align="center"><img alt="birdhouse logo" src="https://willcarhart.dev/docs/birdhouse/_media/logo.png" /></p>
+<p align="center"><img alt="birdhouse logo" src="/docs/birdhouse/_media/logo.png" /></p>
 
 <h1 align="center">birdhouse</h1>
 <h5 align="center">🐦 Passive tweet watcher from the command line</h5>

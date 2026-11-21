@@ -1,4 +1,4 @@
-<p align="center"><img alt="chiller logo" src="https://willcarhart.dev/docs/chiller/_media/logo.png" /></p>
+<p align="center"><img alt="chiller logo" src="/docs/chiller/_media/logo.png" /></p>
 
 <h1 align="center">chiller</h1>
 <h5 align="center">🍺 Helpful GitHub repository and Homebrew tools</h5>
